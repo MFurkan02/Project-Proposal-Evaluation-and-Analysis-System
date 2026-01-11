@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proje Öneri Analiz Sistemi</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .analyzing { animation: pulse 2s infinite; }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
+        body { overflow: hidden; }
+        .custom-scroll::-webkit-scrollbar { width: 6px; }
+        .custom-scroll::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
+        .score-animation { transition: all 1s ease-out; }
+    </style>
+</head>
+<body class="bg-slate-100 h-screen flex flex-col font-sans">
+
+    <header class="bg-white border-b px-6 py-4 flex justify-between items-center shadow-sm z-10">
+        <h1 id="ui-main-title" class="text-xl font-bold text-slate-800 flex items-center">
+            <i class="fas fa-microchip mr-3 text-blue-600"></i>
+            Proje Öneri Değerlendirme ve Analiz Sistemi
+        </h1>
+        <div class="flex space-x-2">
+            <button onclick="changeLanguage('tr')" class="px-3 py-1 bg-slate-50 border rounded hover:bg-slate-200 font-bold text-xs transition-all">TR</button>
+            <button onclick="changeLanguage('en')" class="px-3 py-1 bg-slate-50 border rounded hover:bg-slate-200 font-bold text-xs transition-all">EN</button>
+        </div>
+    </header>
+
+    <main class="flex flex-1 overflow-hidden p-6 gap-6">
+        
+        <div class="w-full md:w-1/3 h-full pr-2">
+            <div class="bg-white rounded-2xl shadow-md p-6 border border-slate-200 flex flex-col h-full overflow-y-auto custom-scroll">
+                <h2 id="ui-upload-title" class="text-lg font-semibold text-slate-700 mb-4 flex items-center">
+                    <i class="fas fa-sliders-h mr-2 text-slate-400"></i> Analiz Paneli
+                </h2>
+                
+                <div id="error-popup" class="hidden mb-4 p-3 bg-red-50 border-l-4 border-red-500 text-red-700 text-sm flex items-center justify-between rounded shadow-sm">
+                    <span id="error-message"></span>
+                    <button onclick="hideError()" class="font-bold text-lg">&times;</button>
+                </div>
+
+                <div id="upload-section" class="space-y-4">
+                    <div class="border-2 border-dashed border-slate-300 rounded-xl p-8 text-center hover:border-blue-500 transition-all cursor-pointer bg-slate-50 group" id="drop-zone">
+                        <input type="file" id="file-input" class="hidden" accept=".pdf" onchange="handleFileSelect()">
+                        <i class="fas fa-cloud-upload-alt text-4xl text-blue-400 mb-3 group-hover:scale-110 transition-transform"></i>
+                        <p id="file-name-label" class="text-slate-500 text-sm font-medium">PDF seçiniz veya sürükleyiniz</p>
+                    </div>
+                    <button onclick="startAnalysis()" id="ui-btn" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 rounded-xl transition-all shadow-lg active:transform active:scale-[0.98]">
+                        ANALİZİ BAŞLAT
+                    </button>
+                </div>
+
+                <div id="score-card" class="hidden mt-6 p-6 bg-white border border-slate-200 rounded-3xl shadow-xl transition-all duration-500 opacity-0 translate-y-4">
+                    <div class="flex flex-col items-center text-center">
+                        <h4 id="score-label" class="text-[10px] font-bold text-slate-400 uppercase tracking-[3px] mb-4">DEĞERLENDİRME SKORU</h4>
+                        
+                        <div class="relative flex items-center justify-center w-32 h-32 mb-4">
+                            <svg class="w-full h-full transform -rotate-90">
+                                <circle cx="64" cy="64" r="58" stroke="currentColor" stroke-width="8" fill="transparent" class="text-slate-100" />
+                                <circle id="score-circle" cx="64" cy="64" r="58" stroke="currentColor" stroke-width="8" fill="transparent" 
+                                    stroke-dasharray="364.4" stroke-dashoffset="364.4"
+                                    class="score-animation" />
+                            </svg>
+                            <div class="absolute flex flex-col items-center">
+                                <span id="display-score" class="text-4xl font-black text-slate-800">0</span>
+                                <span class="text-[10px] font-bold text-slate-400">/ 100</span>
+                            </div>
+                        </div>
+
+                        <div id="score-badge" class="px-4 py-1.5 rounded-full text-[11px] font-black uppercase tracking-wider shadow-sm transition-colors">
+                            HESAPLANIYOR...
+                        </div>
+                    </div>
+                </div>
+
+                <div id="progress-section" class="hidden mt-auto pt-6 border-t border-slate-100">
+                    <div class="flex justify-between mb-2">
+                        <span id="status-text" class="text-xs font-black text-blue-600 uppercase tracking-widest">İŞLENİYOR...</span>
+                        <span id="percent-text" class="text-xs font-bold text-blue-600">0%</span>
+                    </div>
+                    <div class="h-3 bg-slate-100 rounded-full overflow-hidden border p-[2px]">
+                        <div id="progress-bar" style="width:0%" class="h-full bg-blue-500 rounded-full transition-all duration-300 shadow-[0_0_10px_rgba(59,130,246,0.5)]"></div>
+                    </div>
+                    <ul class="mt-6 space-y-4 text-sm" id="step-list">
+                        <li id="step-1" class="flex items-center text-slate-400 transition-colors"><i class="step-icon fas fa-circle mr-3 text-[10px]"></i> <span class="step-text">PDF Dosyası Yükleniyor...</span></li>
+                        <li id="step-2" class="flex items-center text-slate-400 transition-colors"><i class="step-icon fas fa-circle mr-3 text-[10px]"></i> <span class="step-text">AI Analizi Yapılıyor...</span></li>
+                        <li id="step-3" class="flex items-center text-slate-400 transition-colors"><i class="step-icon fas fa-circle mr-3 text-[10px]"></i> <span class="step-text">PDF Hazırlanıyor...</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="w-full md:w-2/3 h-full flex flex-col">
+            <div class="bg-white rounded-2xl shadow-md flex flex-col border border-slate-200 overflow-hidden h-full">
+                <div class="bg-slate-50 border-b px-6 py-4 flex justify-between items-center">
+                    <div class="flex items-center">
+                        <i class="fas fa-file-contract text-blue-500 mr-2"></i>
+                        <h3 id="ui-preview-title" class="text-sm font-bold text-slate-600 uppercase tracking-widest">Rapor Önizleme</h3>
+                    </div>
+                    <a id="download-btn" href="#" class="hidden bg-indigo-600 hover:bg-indigo-700 text-white px-5 py-2 rounded-lg text-xs font-bold flex items-center transition-all shadow-md" target="_blank">
+                        <i class="fas fa-eye mr-2"></i> RAPORU AÇ
+                    </a>
+                </div>
+
+                <div id="preview-container" class="flex-1 flex items-center justify-center bg-slate-200 relative">
+                    <div id="empty-preview" class="text-center text-slate-400">
+                        <div class="w-20 h-20 bg-slate-300 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-file-pdf text-4xl text-slate-100"></i>
+                        </div>
+                        <p id="ui-preview-msg" class="font-medium">Henüz bir rapor oluşturulmadı.</p>
+                    </div>
+                    <iframe id="pdf-viewer" class="hidden w-full h-full border-none" src=""></iframe>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        let currentLang = 'tr';
+        const fileInput = document.getElementById('file-input');
+        const dropZone = document.getElementById('drop-zone');
+        let currentPercent = 0;
+        let progressInterval;
+        let currentScore = 0;
+        let analysisInProgress = false;
+
+        const translations = {
+            tr: {
+                mainTitle: "Proje Öneri Değerlendirme ve Analiz Sistemi",
+                uploadTitle: "Analiz Paneli",
+                dropLabel: "PDF seçiniz veya sürükleyiniz",
+                btn: "ANALİZİ BAŞLAT",
+                errorNoFile: "Lütfen önce bir dosya seçin!",
+                previewTitle: "Rapor Önizleme",
+                previewMsg: "Henüz bir rapor oluşturulmadı.",
+                step1: "PDF Dosyası Yükleniyor...",
+                step2: "AI Analizi Yapılıyor...",
+                step3: "PDF Hazırlanıyor...",
+                status: "İŞLENİYOR...",
+                openBtn: "RAPORU AÇ",
+                scoreLabel: "DEĞERLENDİRME SKORU",
+                scoreCalculating: "HESAPLANIYOR...",
+                scoreHigh: "Yüksek Potansiyel",
+                scoreMedium: "Geliştirilebilir",
+                scoreLow: "Düşük Uyumluluk"
+            },
+            en: {
+                mainTitle: "Project Proposal Evaluation and Analysis System",
+                uploadTitle: "Analysis Panel",
+                dropLabel: "Select or drag PDF",
+                btn: "START ANALYSIS",
+                errorNoFile: "Please select a file first!",
+                previewTitle: "Report Preview",
+                previewMsg: "No report generated yet.",
+                step1: "Uploading PDF...",
+                step2: "AI Analysis in Progress...",
+                step3: "Preparing PDF...",
+                status: "PROCESSING...",
+                openBtn: "OPEN REPORT",
+                scoreLabel: "EVALUATION SCORE",
+                scoreCalculating: "CALCULATING...",
+                scoreHigh: "High Potential",
+                scoreMedium: "Improvement Needed",
+                scoreLow: "Low Compatibility"
+            }
+        };
+
+        dropZone.onclick = () => fileInput.click();
+
+        function resetUI() {
+            // Sadece progress bölümünü gizle
+            document.getElementById('progress-section').classList.add('hidden');
+            
+            // Adımları sıfırla
+            resetSteps();
+            
+            // Progress bar'ı sıfırla
+            currentPercent = 0;
+            document.getElementById('progress-bar').style.width = '0%';
+            document.getElementById('percent-text').innerText = '0%';
+            
+            // Butonu aktif et
+            document.getElementById('ui-btn').disabled = false;
+            document.getElementById('ui-btn').classList.remove('opacity-50');
+            
+            clearInterval(progressInterval);
+        }
+
+        function resetSteps() {
+            for (let i = 1; i <= 3; i++) {
+                const el = document.getElementById('step-' + i);
+                const icon = el.querySelector('.step-icon');
+                el.classList.remove('text-blue-600', 'text-green-600', 'font-bold', 'analyzing');
+                el.classList.add('text-slate-400');
+                icon.className = 'step-icon fas fa-circle mr-3 text-[10px]';
+            }
+        }
+
+        function changeLanguage(lang) {
+            const oldLang = currentLang;
+            currentLang = lang;
+            
+            // Başlıklar ve Butonlar
+            document.getElementById('ui-main-title').innerHTML = `<i class="fas fa-microchip mr-3 text-blue-600"></i> ${translations[lang].mainTitle}`;
+            document.getElementById('ui-upload-title').innerText = translations[lang].uploadTitle;
+            document.getElementById('ui-preview-title').innerText = translations[lang].previewTitle;
+            document.getElementById('ui-preview-msg').innerText = translations[lang].previewMsg;
+            document.getElementById('ui-btn').innerText = translations[lang].btn;
+            document.getElementById('download-btn').innerHTML = `<i class="fas fa-eye mr-2"></i> ${translations[lang].openBtn}`;
+            document.getElementById('status-text').innerText = translations[lang].status;
+            document.getElementById('score-label').innerText = translations[lang].scoreLabel;
+
+            // Skor Rozeti Çevirisi - Eğer skor kartı görünüyorsa
+            const scoreCard = document.getElementById('score-card');
+            if (!scoreCard.classList.contains('hidden')) {
+                updateScoreBadge(currentScore);
+            }
+
+            const fileLabel = document.getElementById('file-name-label');
+            // Eğer henüz dosya seçilmemişse (yani varsayılan etiket yazıyorsa) çevir
+            if (fileLabel.innerText === translations[oldLang].dropLabel || !fileInput.files[0]) {
+                fileLabel.innerText = translations[lang].dropLabel;
+            }
+
+            // Adımlar
+            const steps = document.querySelectorAll('.step-text');
+            steps[0].innerText = translations[lang].step1;
+            steps[1].innerText = translations[lang].step2;
+            steps[2].innerText = translations[lang].step3;
+        }
+
+        function updateScoreBadge(score) {
+            const scoreBadge = document.getElementById('score-badge');
+            
+            if (score >= 80) {
+                scoreBadge.className = "px-4 py-1.5 rounded-full text-[11px] font-black uppercase tracking-wider shadow-sm bg-green-100 text-green-700";
+                scoreBadge.innerText = translations[currentLang].scoreHigh;
+            } else if (score >= 55) {
+                scoreBadge.className = "px-4 py-1.5 rounded-full text-[11px] font-black uppercase tracking-wider shadow-sm bg-amber-100 text-amber-700";
+                scoreBadge.innerText = translations[currentLang].scoreMedium;
+            } else {
+                scoreBadge.className = "px-4 py-1.5 rounded-full text-[11px] font-black uppercase tracking-wider shadow-sm bg-red-100 text-red-700";
+                scoreBadge.innerText = translations[currentLang].scoreLow;
+            }
+        }
+
+        function handleFileSelect() {
+            if (fileInput.files.length > 0) {
+                document.getElementById('file-name-label').innerText = fileInput.files[0].name;
+                hideError();
+                
+                // Yeni dosya seçildiğinde önceki sonuçları temizle
+                document.getElementById('score-card').classList.add('hidden');
+                document.getElementById('pdf-viewer').classList.add('hidden');
+                document.getElementById('empty-preview').classList.remove('hidden');
+                document.getElementById('download-btn').classList.add('hidden');
+                resetUI();
+            }
+        }
+
+        function showError(msg) {
+            const popup = document.getElementById('error-popup');
+            document.getElementById('error-message').innerText = msg;
+            popup.classList.remove('hidden');
+        }
+
+        function hideError() { document.getElementById('error-popup').classList.add('hidden'); }
+
+        function smoothProgress(target, duration) {
+            clearInterval(progressInterval);
+            const start = currentPercent;
+            const distance = target - start;
+            const startTime = Date.now();
+
+            function updateProgress() {
+                const elapsed = Date.now() - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                
+                // Easing function for smoother animation
+                const easeOutCubic = 1 - Math.pow(1 - progress, 3);
+                currentPercent = start + (distance * easeOutCubic);
+                
+                document.getElementById('progress-bar').style.width = currentPercent + '%';
+                document.getElementById('percent-text').innerText = Math.round(currentPercent) + '%';
+                
+                if (progress < 1) {
+                    requestAnimationFrame(updateProgress);
+                } else {
+                    currentPercent = target;
+                    document.getElementById('progress-bar').style.width = currentPercent + '%';
+                    document.getElementById('percent-text').innerText = Math.round(currentPercent) + '%';
+                }
+            }
+            
+            updateProgress();
+        }
+
+        function updateScoreUI(score) {
+            currentScore = score;
+            const scoreCard = document.getElementById('score-card');
+            const scoreCircle = document.getElementById('score-circle');
+            const scoreDisplay = document.getElementById('display-score');
+
+            scoreCard.classList.remove('hidden');
+            setTimeout(() => {
+                scoreCard.classList.remove('opacity-0', 'translate-y-4');
+            }, 10);
+            
+            const offset = 364.4 - (score / 100) * 364.4;
+            
+            // Renk ayarı
+            if (score >= 80) {
+                scoreCircle.style.stroke = '#10b981';
+            } else if (score >= 55) {
+                scoreCircle.style.stroke = '#f59e0b';
+            } else {
+                scoreCircle.style.stroke = '#ef4444';
+            }
+            
+            scoreCircle.style.strokeDashoffset = offset;
+
+            let current = 0;
+            const duration = 1500;
+            const start = performance.now();
+
+            function animate(time) {
+                let progress = (time - start) / duration;
+                if (progress > 1) progress = 1;
+                
+                // Easing function
+                const easeOutQuart = 1 - Math.pow(1 - progress, 4);
+                current = Math.floor(easeOutQuart * score);
+                
+                scoreDisplay.innerText = current;
+                
+                if (progress < 1) {
+                    requestAnimationFrame(animate);
+                } else {
+                    scoreDisplay.innerText = score;
+                    updateScoreBadge(score);
+                }
+            }
+            
+            requestAnimationFrame(animate);
+        }
+
+        async function startAnalysis() {
+            if (analysisInProgress) return;
+            
+            if (!fileInput.files || fileInput.files.length === 0) {
+                showError(translations[currentLang].errorNoFile);
+                return;
+            }
+
+            analysisInProgress = true;
+            const file = fileInput.files[0];
+            const formData = new FormData();
+            formData.append('file', file);
+
+            // Önceki raporu temizle
+            document.getElementById('score-card').classList.add('hidden');
+            document.getElementById('pdf-viewer').classList.add('hidden');
+            document.getElementById('empty-preview').classList.remove('hidden');
+            document.getElementById('download-btn').classList.add('hidden');
+            
+            // UI'ı sıfırla ve başlat
+            resetSteps();
+            document.getElementById('progress-section').classList.remove('hidden');
+            document.getElementById('ui-btn').disabled = true;
+            document.getElementById('ui-btn').classList.add('opacity-50');
+            currentPercent = 0;
+
+            updateStepUI(1, true);
+            smoothProgress(30, 1000);
+
+            try {
+                setTimeout(() => {
+                    updateStepUI(1, false, true);
+                    updateStepUI(2, true);
+                    smoothProgress(85, 45000); 
+                }, 1200);
+
+                const response = await fetch('/analyze', { method: 'POST', body: formData });
+                const result = await response.json();
+
+                if (result.success) {
+                    updateStepUI(2, false, true);
+                    updateStepUI(3, true);
+                    smoothProgress(100, 500);
+
+                    setTimeout(() => {
+                        updateStepUI(3, false, true);
+                        updateScoreUI(result.score);
+                        
+                        const pdfUrl = "/download/" + result.filename;
+                        document.getElementById('pdf-viewer').src = pdfUrl;
+                        document.getElementById('pdf-viewer').classList.remove('hidden');
+                        document.getElementById('empty-preview').classList.add('hidden');
+                        document.getElementById('download-btn').href = pdfUrl;
+                        document.getElementById('download-btn').classList.remove('hidden');
+                        
+                        analysisInProgress = false;
+                        document.getElementById('ui-btn').disabled = false;
+                        document.getElementById('ui-btn').classList.remove('opacity-50');
+                    }, 800);
+                } else { 
+                    throw new Error(result.error); 
+                }
+            } catch (error) {
+                showError("Hata: " + error.message);
+                analysisInProgress = false;
+                resetUI();
+            }
+        }
+
+        function updateStepUI(num, active, complete = false) {
+            const el = document.getElementById('step-' + num);
+            const icon = el.querySelector('.step-icon');
+            
+            // Önce tüm stilleri temizle
+            el.classList.remove('text-blue-600', 'text-green-600', 'font-bold', 'analyzing', 'text-slate-400');
+            icon.classList.remove('fa-spin', 'fa-circle-notch', 'fa-check-circle', 'fa-circle');
+            
+            if (active) {
+                el.classList.add('text-blue-600', 'font-bold', 'analyzing');
+                icon.classList.add('fa-circle-notch', 'fa-spin', 'mr-3', 'text-blue-500');
+            } else if (complete) {
+                el.classList.add('text-green-600');
+                icon.classList.add('fa-check-circle', 'mr-3', 'text-green-500');
+            } else {
+                el.classList.add('text-slate-400');
+                icon.classList.add('fa-circle', 'mr-3', 'text-[10px]');
+            }
+        }
+    </script>
+</body>
+</html>

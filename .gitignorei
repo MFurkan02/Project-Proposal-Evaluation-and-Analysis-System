@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+.env
+*.pyc
+
+# Flask uploads
+uploads/
+
+# Gemini / API
+.env
+
+# LaTeX build files
+*.aux
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.fls
+*.fdb_latexmk
+*.bbl
+*.blg
+*.synctex.gz
+*.nav
+*.snm
+
+# OS
+.DS_Store
+Thumbs.db
+
