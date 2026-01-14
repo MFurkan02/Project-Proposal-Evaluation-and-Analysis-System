@@ -361,7 +361,7 @@ def analyze():
         # 7. maddeyi (Puan) ayırıp araya Soru Setini sokuyoruz
         #parts = re.split(r'(?i)(7\.\s*Puan:|Puan:|Skor:)', main_text, maxsplit=1)
 
-        #print(main_text)
+        print(main_text)
 
         
         """final_full_text = ""
