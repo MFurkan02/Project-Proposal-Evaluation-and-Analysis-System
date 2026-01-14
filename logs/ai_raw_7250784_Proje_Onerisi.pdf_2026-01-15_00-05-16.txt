@@ -1,0 +1,74 @@
+=== UPLOADED FILE ===
+7250784_Proje_Onerisi.pdf
+
+=== GENERATED MAIN TEXT ===
+**Proje Özeti**
+
+Bu proje önerisi, mevcut kelime bulmaca oyunlarının sınırlılıklarını aşmayı hedefleyen, çok dilli ve yapay zeka destekli çok oyunculu bir kelime bulmaca oyunu geliştirme projesidir. Proje, kullanıcıların dil becerilerini geliştirmelerini, zihinsel uyarıcılığı artırmalarını ve sosyal etkileşimde bulunmalarını sağlayacak eğlenceli ve interaktif bir deneyim sunmayı amaçlamaktadır. Proje, Unity oyun motoru, Java tabanlı arka uç teknolojileri, yapay zeka destekli kelime önerme sistemi ve socket teknolojisi ile gerçek zamanlı çok oyunculu bir altyapı üzerine kurulmuştur. Proje, 15 ay sürecek olup, tahmini toplam maliyeti 2.229.534 TL ve 39.98 adam-ay insan kaynağı içermektedir. İlk yıl için 10.000 kullanıcı, NLP için en az 2 dil ve 50ms maksimum soket gecikmesi gibi somut başarı ölçütleri hedeflenmektedir. Gelir modeli, oyun içi satın almalar, reklamlar, özel turnuvalar ve marka iş birliklerini kapsamaktadır.
+
+**Projenin Belirlenen Kriterlere Göre Değerlendirilmesi**
+
+**I. Boyut: Endüstriyel Ar-Ge İçeriği, Teknoloji Düzeyi ve Yenilikçi Yönü**
+
+Proje önerisi, mevcut kelime bulmaca oyunlarındaki temel sınırlılıkları ele alarak (tek oyunculu modlar, sınırlı dil desteği) yenilikçi çözümler sunmaktadır. Bu bağlamda, Ar-Ge içeriği oldukça güçlüdür. Yapay zeka destekli çok dilli kelime önerme sisteminin geliştirilmesi, oyuncuların kendi ana dillerinde veya öğrenmek istedikleri dillerde oyun oynama imkanı sunarak dil öğrenimini interaktif ve eğlenceli hale getirmeyi hedeflemektedir. Bu, Frascati Kılavuzu'ndaki Deneysel Geliştirme tanımına uyan, mevcut bilgilerden yararlanılarak yeni bir sistem tesis etme çalışmasıdır. Ayrıca, gerçek zamanlı çok oyunculu altyapının oluşturulması ve düşük gecikme süreleri ile yüksek performans sağlanması da önemli bir teknik meydan okuma ve Ar-Ge faaliyetidir. Teknik belirsizlikler bölümünde belirtilen gelişmiş NLP modellemesi, yüksek performanslı ağ mimarisi, çoklu dil lokalizasyonu, AI ile kişiselleştirilmiş oyun deneyimi ve veri güvenliği konuları, projenin Ar-Ge derinliğini ve özgün katkı potansiyelini göstermektedir.
+
+Teknolojik düzey açısından, proje güncel oyun geliştirme (Unity), arka uç (Java, mikroservis mimarisi), yapay zeka (NLP, ML) ve ağ teknolojilerini (WebSockets) bir araya getirmektedir. Bu teknolojilerin entegrasyonu ve optimizasyonu, özellikle çok dilli ve gerçek zamanlı rekabetçi bir kelime bulmaca oyununda, sektördeki mevcut durumu ileri taşıma potansiyeli taşımaktadır. Sunulan benzer oyunlarla kıyaslama tablosu, projenin "özelleştirme", "ödül ve ceza", "karşılıklı oynama" ve "çoklu dil desteği" gibi özelliklerde rakiplerine göre önemli farklılıklar sunduğunu net bir şekilde göstermektedir. Bu özellikler, projenin ürün yeniliği sınıfına (firma için yeni bir ürün, dünya için yeni bir ürün) girmesine katkı sağlamaktadır. Ulusal bilgi birikimine katkı ve yazılım ihracatı potansiyeli de projenin teknolojik bağımsızlığa yönelik katkılarını pekiştirmektedir.
+
+**II. Boyut: Proje Planının ve Kuruluş Altyapısının Proje İçin Uygunluğu**
+
+Proje planı, "Analiz Çalışmaları", "Görsel Tasarım", "Unity Geliştirmeleri", "Arka Uç Geliştirmeleri", "Testler", "Yapay Zeka Geliştirmeleri" ve "Unity - Arka Uç Entegrasyonu" olmak üzere yedi iş paketi altında detaylandırılmıştır. Her bir iş paketinin başlangıç/bitiş tarihleri, süreleri ve çıktıları belirgindir. İş Zaman Çubuk Grafiği, projenin zamanlamasını görsel olarak desteklemektedir. Çevik yazılım geliştirme ve DevOps metodolojilerinin benimsenmesi, projenin esneklik, ölçeklenebilirlik ve hızlı adaptasyon yeteneğini artıracaktır. Bu, proje planının yeterli ve gerçekçi olduğunu göstermektedir.
+
+Proje ekibi, Genel Müdür olarak proje yürütücüsü Oktay Doğaner'in 20 yılı aşkın yazılım geliştirme tecrübesi (web, mobil, IoT, socket teknolojisi) ve proje yönetimi konusundaki yetkinliğiyle güçlü bir liderliğe sahiptir. Ekipte ayrıca doktora dereceli bir yazılım mühendisi (geliştirici, proje yöneticisi) ve uzman yardımcısı yazılım mühendisi (oyun geliştirici, analist) bulunmaktadır. Bu çeşitlilik, teknik gereksinimleri karşılayacak yetkin bir insan kaynağı olduğunu göstermektedir. Yapay Zeka Geliştirmeleri iş paketi için akademik danışmanlık öngörülmesi, bu alandaki uzmanlık ihtiyacını karşılamaya yönelik proaktif bir yaklaşımdır.
+
+Kuruluş altyapısı açısından, Oreon Yazılım'ın kapsamlı bir Ar-Ge yapılanmasına sahip olduğu belirtilmiştir. Bu yapılanma, uzman personel, simülasyon/modelleme araçları, gelişmiş alet-teçhizat ve yazılım araçlarını (SDK'lar, programlama dilleri, veritabanı yönetim sistemleri) içermektedir. Proje bütçesinde bilgisayar alımları ve AWS Bulut Sunucu Hizmetleri gibi kritik altyapı giderlerinin yer alması, projenin teknik gereksinimlerinin karşılanması için gerekli donanım ve hizmet altyapısının planlandığını göstermektedir.
+
+**III. Boyut: Proje Çıktılarının Ekonomik Yarara ve Ulusal Kazanıma Dönüşebilirliği**
+
+Projenin ticari başarı potansiyeli yüksektir. Mobil oyun sektörünün hızla büyüyen ve yıllık 100 milyar doları aşan bir pazar olduğu belirtilmiştir. Proje, hedeflediği pazar segmenti (12-55 yaş arası, global pazar, eğlenceli ve öğretici içerik arayanlar, sosyal etkileşime önem verenler) ile geniş bir kitleye hitap etmektedir. Oyun içi satın alma, reklam gelirleri, özel turnuvalar ve marka iş birlikleri gibi çoklu gelir modelleri, projenin sürdürülebilir bir ticari yapıya sahip olacağını düşündürmektedir. İlk yıl için %0,001-0,005 pazar payı ve 10.000 aktif kullanıcı hedefi, 5. yıl için %0,5 pazar payı ve 1 milyon aktif kullanıcı hedefi ile satış öngörüleri makul ve detaylıdır. Yapılan başa baş analizi, projenin 15-20 ayda kara geçiş noktasına ulaşacağını öngörmektedir, bu da yatırımın geri dönüş süresi açısından olumlu bir göstergedir.
+
+Ulusal kazanımlar açısından proje, yeni oyun fikirleri ve Ar-Ge projeleri için potansiyel yaratma, yapay zeka algoritmaları ve çoklu dil desteği gibi alanlarda fikri mülkiyet hakları geliştirme potansiyeli taşımaktadır. Oyun geliştirme ve yazılım mühendisliği alanlarında yeni iş alanları oluşturması, bulut teknolojileri ve veritabanı yönetimi gibi yan sektörlere katkı sağlaması beklenmektedir. Projenin eğitici yönüyle dil becerilerinin geliştirilmesi, sosyalleşme ve kültürlerarası diyaloğa katkısı gibi sosyal ve kültürel etkileri de önemli ulusal faydalar arasındadır. Dijitalleşme ile basılı materyal kullanımının azaltılması gibi olumlu çevresel etkiler vurgulanırken, artan enerji sarfiyatına karşı yeşil yazılım standartları ve AWS gibi yeşil dostu teknolojilerin kullanımı ile önlemler alınması planlanmıştır.
+
+**Olası Başarısızlık Riskleri ve Karşı Alınabilecek Önlemler**
+
+1.  **Gerçek Zamanlı Çok Oyunculu Sistemde Gecikmeler:**
+    *   **Alınacak Önlemler:** Optimize edilmiş ağ altyapısı, yük dengeleme ve düşük gecikmeli veri iletimi için WebSocket teknolojisi kullanılacaktır.
+    *   **Risk Gerçekleşirse Yapılacaklar:** Daha uygun donanımlı altyapı tedariki sağlanacak ve daha detaylı optimizasyonlar planlanacaktır.
+    *   **Etki:** Orta.
+
+2.  **Çok Dilli Kelime Önerme Sisteminin Doğruluğu:**
+    *   **Alınacak Önlemler:** Gelişmiş NLP modelleri kullanılacak, sürekli eğitim ve kullanıcı geri bildirimleriyle model iyileştirmeleri yapılacaktır.
+    *   **Risk Gerçekleşirse Yapılacaklar:** NLP modelleri optimize edilecek ve ilgili dillerde uzman kişilerle çalışılacaktır.
+    *   **Etki:** Orta.
+
+3.  **Mobil ve Web Platformları Arasında Entegrasyon Sorunları:**
+    *   **Alınacak Önlemler:** Mikroservis mimarisi ile ölçeklenebilir ve esnek sistem tasarımı yapılacaktır.
+    *   **Risk Gerçekleşirse Yapılacaklar:** Donanım ve kod altyapısı iyileştirilebilir.
+    *   **Etki:** Düşük.
+
+4.  **Siber Güvenlik Açıkları:**
+    *   **Alınacak Önlemler:** Kritik verilerin şifrelenmesi, DDoS koruma önlemleri ve düzenli güvenlik testleri yapılacaktır.
+    *   **Risk Gerçekleşirse Yapılacaklar:** Konuda uzman firmalardan danışmanlık alınabilir ve ekstra güvenlik prosedürleri uygulanabilir.
+    *   **Etki:** Yüksek.
+
+5.  **Geliştirme Sürecinde Bütçenin Aşılması:**
+    *   **Alınacak Önlemler:** Maliyet takibi yapılacak ve alternatif fon kaynakları (kişisel varlıklar, krediler, yatırımcılar) devreye sokulması planlanacaktır.
+    *   **Risk Gerçekleşirse Yapılacaklar:** Krediler, borçlar gibi alternatif kaynaklar yaratılmalıdır.
+    *   **Etki:** Orta.
+
+6.  **Beklenen Gelir Akışına Geç Ulaşılması:**
+    *   **Alınacak Önlemler:** Pazarlama faaliyetleri gözden geçirilecek ve ücretsiz kullanımın teşvik edilerek kullanıcı bağlılığı oluşturulacaktır.
+    *   **Risk Gerçekleşirse Yapılacaklar:** Kişisel kaynaklar devreye alınabilir ve pazarlama ile reklam faaliyetlerinde değerlendirilebilir.
+    *   **Etki:** Orta.
+
+**Kritik Ek Sorular**
+
+1.  Projede geliştirilecek olan yapay zeka destekli çok dilli kelime önerme sistemi için kullanılacak eğitim verisi kaynakları ve bu verilerin gizliliği/etik kullanımı konularında detaylı bir açıklama yapılabilir mi?
+2.  Projenin "Özel Dizilimli Klavye" özelliği, projenin başında belirtilen ana bileşenlerden biri olmasına rağmen, proje planı ve teknik özellikler bölümlerinde yeterince detaylandırılmamıştır. Bu klavyenin özgünlüğü, teknik detayları ve oyun deneyimine katkısı hakkında daha fazla bilgi verilebilir mi?
+3.  Pazardaki benzer oyunlarla kıyaslama tablosunda belirtilen "Özelleştirme" ve "Ödül & Ceza" mekanizmalarının somut olarak nasıl bir Ar-Ge içeriği taşıdığı ve bu özelliklerin teknik zorlukları detaylandırılabilir mi?
+4.  Projenin ticarileşme planında, uluslararası pazara yönelik satış stratejileri ve bölgesel adaptasyon (lokalizasyon) süreçleri hakkında daha spesifik bilgiler (örneğin, hedeflenen ilk ülkeler, dil ve kültür adaptasyon süreçleri) sunulabilir mi?
+5.  Projenin sosyal ve eğitimsel etkilerini ölçmek için hangi nicel ve nitel metrikler kullanılacak, bu metrikler nasıl toplanacak ve değerlendirme süreçleri nasıl işleyecektir?
+
+**Puan: 88/100**
+
+**Gerekçe:**
+Proje önerisi, çok dilli ve yapay zeka destekli çok oyunculu kelime bulmaca oyunu geliştirme hedefiyle yüksek Ar-Ge içeriği ve yenilikçi yönler sunmaktadır. Mevcut piyasadaki sınırlılıkları aşma potansiyeli, dil öğrenimi ve sosyal etkileşime katkı sağlama hedefleri projenin değerini artırmaktadır. Teknik olarak güncel teknolojilerin (Unity, Java, NLP, WebSockets) kullanımı ve çevik metodolojilerin benimsenmesi, projenin teknolojik düzeyini ve uygulama kabiliyetini desteklemektedir. Proje ekibinin deneyimi ve planlanan altyapı yatırımları, projenin yürütülmesi için uygun bir ortam sağlamaktadır. Mobil oyun pazarındaki güçlü ticari potansiyel, detaylı gelir modelleri ve başa baş analizi, projenin ekonomik sürdürülebilirliğini göstermektedir. Ayrıca, yeni iş alanları, fikri mülkiyet ve sosyo-kültürel katkılar gibi ulusal kazanımlar da net bir şekilde belirtilmiştir. Risk yönetimi planı da potansiyel sorunlara karşı öngörülü bir yaklaşım sergilemektedir. Ancak, klavye özel dizilimi gibi bazı temel özelliklerin teknik derinliği, yapay zeka eğitim verilerinin detayları ve uluslararası pazarlama stratejilerinin kültürel adaptasyon süreçleri hakkında daha fazla açıklama, projenin genel kapsamını ve uygulanabilirliğini daha da güçlendirecektir. Genel itibarıyla proje, TÜBİTAK'ın destekleme kriterlerini yüksek düzeyde karşılamaktadır.

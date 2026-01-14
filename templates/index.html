@@ -9,11 +9,19 @@
     <style>
         .analyzing { animation: pulse 2s infinite; }
         @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
-        body { overflow: hidden; }
+
+        /* MOBILE SCROLL FIX */
+        body {
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+
         .custom-scroll::-webkit-scrollbar { width: 6px; }
         .custom-scroll::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
+
         .score-animation { transition: all 1s ease-out; }
     </style>
+
 </head>
 <body class="bg-slate-100 h-screen flex flex-col font-sans">
 
@@ -28,9 +36,10 @@
         </div>
     </header>
 
-    <main class="flex flex-1 overflow-hidden p-6 gap-6">
+    <main class="flex flex-col md:flex-row flex-1 md:overflow-hidden p-3 md:p-6 gap-4 md:gap-6 overflow-y-auto">
+
         
-        <div class="w-full md:w-1/3 h-full pr-2">
+        <div class="w-full md:w-1/3 md:h-full pr-0 md:pr-2">
             <div class="bg-white rounded-2xl shadow-md p-6 border border-slate-200 flex flex-col h-full overflow-y-auto custom-scroll">
                 <h2 id="ui-upload-title" class="text-lg font-semibold text-slate-700 mb-4 flex items-center">
                     <i class="fas fa-sliders-h mr-2 text-slate-400"></i> Analiz Paneli
@@ -92,7 +101,9 @@
             </div>
         </div>
 
-        <div class="w-full md:w-2/3 h-full flex flex-col">
+        
+
+        <div class="w-full md:w-2/3 md:h-full flex flex-col mt-4 md:mt-0">
             <div class="bg-white rounded-2xl shadow-md flex flex-col border border-slate-200 overflow-hidden h-full">
                 <div class="bg-slate-50 border-b px-6 py-4 flex justify-between items-center">
                     <div class="flex items-center">
@@ -111,7 +122,7 @@
                         </div>
                         <p id="ui-preview-msg" class="font-medium">Henüz bir rapor oluşturulmadı.</p>
                     </div>
-                    <iframe id="pdf-viewer" class="hidden w-full h-full border-none" src=""></iframe>
+                    <iframe id="pdf-viewer" class="hidden w-full h-[70vh] md:h-full border-none" src=""></iframe>
                 </div>
             </div>
         </div>
@@ -125,6 +136,7 @@
         let progressInterval;
         let currentScore = 0;
         let analysisInProgress = false;
+        let progressAnimationId = null;
 
         const translations = {
             tr: {
@@ -152,7 +164,7 @@
                 dropLabel: "Select or drag PDF",
                 btn: "START ANALYSIS",
                 errorNoFile: "Please select a file first!",
-                previewTitle: "Report Preview",
+                previewTitle: "Report Prevıew",
                 previewMsg: "No report generated yet.",
                 step1: "Uploading PDF...",
                 step2: "AI Analysis in Progress...",
@@ -161,9 +173,9 @@
                 openBtn: "OPEN REPORT",
                 scoreLabel: "EVALUATION SCORE",
                 scoreCalculating: "CALCULATING...",
-                scoreHigh: "High Potential",
+                scoreHigh: "Hıgh Potentıal",
                 scoreMedium: "Improvement Needed",
-                scoreLow: "Low Compatibility"
+                scoreLow: "Low Compatıbılıty"
             }
         };
 
@@ -269,33 +281,40 @@
         function hideError() { document.getElementById('error-popup').classList.add('hidden'); }
 
         function smoothProgress(target, duration) {
-            clearInterval(progressInterval);
+            if (progressAnimationId) {
+                cancelAnimationFrame(progressAnimationId);
+                progressAnimationId = null;
+            }
+
             const start = currentPercent;
             const distance = target - start;
-            const startTime = Date.now();
+            const startTime = performance.now();
 
-            function updateProgress() {
-                const elapsed = Date.now() - startTime;
+            function updateProgress(time) {
+                const elapsed = time - startTime;
                 const progress = Math.min(elapsed / duration, 1);
-                
-                // Easing function for smoother animation
                 const easeOutCubic = 1 - Math.pow(1 - progress, 3);
                 currentPercent = start + (distance * easeOutCubic);
-                
+
                 document.getElementById('progress-bar').style.width = currentPercent + '%';
                 document.getElementById('percent-text').innerText = Math.round(currentPercent) + '%';
-                
+
                 if (progress < 1) {
-                    requestAnimationFrame(updateProgress);
+                    progressAnimationId = requestAnimationFrame(updateProgress);
                 } else {
                     currentPercent = target;
-                    document.getElementById('progress-bar').style.width = currentPercent + '%';
-                    document.getElementById('percent-text').innerText = Math.round(currentPercent) + '%';
+                    document.getElementById('progress-bar').style.width = target + '%';
+                    document.getElementById('percent-text').innerText = target + '%';
+                    progressAnimationId = null;
                 }
             }
-            
-            updateProgress();
+
+            progressAnimationId = requestAnimationFrame(updateProgress);
         }
+
+
+        
+
 
         function updateScoreUI(score) {
             currentScore = score;
@@ -379,13 +398,24 @@
                 setTimeout(() => {
                     updateStepUI(1, false, true);
                     updateStepUI(2, true);
-                    smoothProgress(85, 45000); 
-                }, 1200);
+                    smoothProgress(85, 80000); 
+                }, 2000);
 
                 const response = await fetch('/analyze', { method: 'POST', body: formData });
                 const result = await response.json();
 
+                if (progressAnimationId) {
+                    cancelAnimationFrame(progressAnimationId);
+                    progressAnimationId = null;
+                }
+
+                currentPercent = 100;
+                document.getElementById('progress-bar').style.width = '100%';
+                document.getElementById('percent-text').innerText = '100%';
+
+
                 if (result.success) {
+                    clearInterval(progressInterval);
                     updateStepUI(2, false, true);
                     updateStepUI(3, true);
                     smoothProgress(100, 500);

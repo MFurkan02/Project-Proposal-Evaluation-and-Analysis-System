@@ -5,6 +5,8 @@ from flask import Flask, render_template, request, jsonify, send_from_directory
 from dotenv import load_dotenv
 from google import genai
 from fpdf import FPDF
+import json
+from datetime import datetime
 
 # --- YAPILANDIRMA ---
 load_dotenv()
@@ -15,15 +17,39 @@ RAG_FOLDER = "RAG files"
 FONT_FOLDER = "fonts"
 FONT_NORMAL = os.path.join(FONT_FOLDER, "TIMES.ttf")
 FONT_BOLD = os.path.join(FONT_FOLDER, "TIMESBD.ttf")
+HISTORY_FILE = "history.json"
+LOG_FOLDER = "logs"
+
+if not os.path.exists(LOG_FOLDER):
+    os.makedirs(LOG_FOLDER)
+
 
 for folder in [UPLOAD_FOLDER, RAG_FOLDER, FONT_FOLDER]:
     if not os.path.exists(folder):
         os.makedirs(folder)
 
-api_key = os.getenv("GEMINI_API_KEY")
+api_key = os.getenv("GEMINI_API_KEY2") 
 client = genai.Client(api_key=api_key)
 
 # --- YARDIMCI FONKSİYONLAR ---
+
+def save_main_text_log(main_text, uploaded_filename):
+    timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+
+    safe_name = re.sub(r'[^\w.-]', '_', uploaded_filename)
+    log_filename = f"ai_raw_{safe_name}_{timestamp}.txt"
+
+    log_path = os.path.join(LOG_FOLDER, log_filename)
+
+    with open(log_path, "w", encoding="utf-8") as f:
+        f.write("=== UPLOADED FILE ===\n")
+        f.write(uploaded_filename + "\n\n")
+
+        f.write("=== GENERATED MAIN TEXT ===\n")
+        f.write(main_text)
+
+
+
 def extract_score_from_text(text):
     """
     Extract score from text using multiple methods
@@ -62,6 +88,79 @@ def extract_score_from_text(text):
                         continue
     
     return 0  # Default if no score found
+
+def normalize_score_line(line):
+    match = re.search(
+        r'(Puan|Skor)\s*[:\-]?\s*(\d{1,3})\s*/\s*100',
+        line,
+        re.IGNORECASE
+    )
+    if match:
+        return f"Puan: {match.group(2)}/100"
+    return line
+
+def clean_report_header(text):
+    """
+    İçinde 'PROJE DEĞERLENDİRME RAPORU' geçen
+    başlık / üst başlık bloklarını kaldırır
+    """
+    pattern = (
+        r'^\s*#{0,3}.*PROJE\s+DEĞERLENDİRME\s+RAPORU.*(?:\n\s*.*)*?\n+'
+    )
+    return re.sub(pattern, '', text, flags=re.IGNORECASE)
+
+
+
+"""def remove_lonely_numbered_lines(text):
+    cleaned_lines = []
+    for line in text.split('\n'):
+        # Matches lines that contain ONLY markdown + a number + dot
+        if re.match(r'^\s*(\*\*)?\s*\d+\.\s*(\*\*)?\s*$', line):
+            continue
+        cleaned_lines.append(line)
+    return '\n'.join(cleaned_lines)"""
+
+import re
+
+def remove_lonely_numbered_lines(text):
+    cleaned_lines = []
+    for line in text.split('\n'):
+        # SADECE gerçekten boş numara satırlarını sil
+        if re.match(r'^\s*(\*\*)?\s*\d+\.\s*(\*\*)?\s*$', line):
+            continue
+        cleaned_lines.append(line)
+    return '\n'.join(cleaned_lines)
+
+
+
+def remove_sensitive_project_info(text):
+    """
+    Proje adı, numarası, yürütücü, kuruluş ve gizli bilgi içeren satırları siler
+    """
+    sensitive_patterns = [
+        r'proje\s*(adı|ismi|başlığı)',
+        r'proje\s*(no|numara|numarası)',
+        r'yürütücü',
+        #r'kuruluş',
+        r'başvuru\s*sahibi',
+        r'destek\s*programı',
+        r'proje\s*sahibi',
+        r'gizli\s*bilgi',
+        r'\[?\s*gizli\s*\]?',
+        #r'^\s*#+\s*puan\s*(ve|&|-)?\s*gerekçes(i|leri)?\b',
+        #r'^\s*\d+\s*[.)]?\s*#+?\s*puan(\s*(ve|&|-)?\s*gerekçes(i|leri)?)?\b',   
+    ]
+
+    cleaned_lines = []
+    for line in text.split('\n'):
+        lower_line = line.lower()
+        if any(re.search(pattern, lower_line) for pattern in sensitive_patterns):
+            continue  # SATIRI TAMAMEN ATLA
+        cleaned_lines.append(line)
+
+    return '\n'.join(cleaned_lines)
+
+
 
 # PDF Sınıfı
 class PDFReport(FPDF):
@@ -148,12 +247,11 @@ def analyze():
         main_prompt = (
             "Bu proje teklifi belgesini baştan sona inceleyin. RAG belgelerini bağlam olarak kullanın.\n"
             "Şunları yapın:\n"
-            "1. Proje Başlığı: [BAŞLIK] formatında proje adını belirtin.\n"
-            "2. Projenin temel özelliklerini listeleyin.\n"
-            "3. Projeyi ekteki belgelerdeki 3 boyuta göre ayrı başlıklarla değerlendirin. Paragraf şeklinde detaylı bir şekilde değerlendir. Başlık: 'Projenin Belirlenen Kriterlere Göre Değerlendirilmesi'\n"
-            "4. Olası başarısızlık risklerini açıklayın.\n"
-            "5. Projeyle ilgili kritik ek sorular oluşturun.\n"
-            "7. Puan: [X]/100 formatında kesin bir puan verin ve gerekçesini belirtin. Puanı [X] formatında ve sayısal olarak belirtin. Örnek: Puan: 85/100\n"
+            "1. Projenin başarı kriterleri,proje takvimi,maliyeti gibi temel özelliklerini listeleyin fakat proje adı,numarası,yürütücüsü,kuruluşu gibi gizli bilgileri kesinlikle yazmayın.\n"
+            "2. Projeyi ekteki belgelerdeki 3 boyuta göre ayrı başlıklarla değerlendirin. Paragraf şeklinde detaylı bir şekilde değerlendir. Başlık: 'Projenin Belirlenen Kriterlere Göre Değerlendirilmesi'\n"
+            "3. Olası başarısızlık risklerini ve bu risklere karşı alınabilecek önlemleri detaylı bir şekilde açıklayın.\n"
+            "4. Projeyle ilgili kritik ek sorular oluşturun.\n"
+            "5. Puan: X/100 formatında kesin bir puan verin ve gerekçesini belirtmeyi unutmayın!. Puanı X formatında ve sayısal olarak belirtin. Örnek: Puan: 85/100\n"
             "Yanıtı resmi bir proje raporu formatında sunun. Lütfen puanı açık ve belirgin bir şekilde belirtin."
         )
 
@@ -162,6 +260,8 @@ def analyze():
             contents=[primary_file] + rag_files + [main_prompt]
         )
         main_text = main_response.text
+        main_text = clean_report_header(main_text)
+        save_main_text_log(main_text, file.filename)
 
         # 4. Model 2: Soru Seti Cevapları (Gemini 2.5 Flash Lite)
         lite_prompt = (
@@ -220,7 +320,7 @@ def analyze():
 
         # If still not found, try to extract from the "Puan:" section in split parts
         if proje_puani == 0:
-            parts = re.split(r'(?i)(7\.\s*Puan:|Puan:|Skor:)', main_text, maxsplit=1)
+            parts = re.rsplit(r'(?i)\bPuan\s*[:\-]', main_text, maxsplit=1)
             if len(parts) >= 3:
                 puan_section = parts[1] + parts[2]
                 for pattern in puan_patterns:
@@ -259,16 +359,30 @@ def analyze():
 
         # --- METİN BİRLEŞTİRME (Sıralı Enjeksiyon) ---
         # 7. maddeyi (Puan) ayırıp araya Soru Setini sokuyoruz
-        parts = re.split(r'(?i)(7\.\s*Puan:|Puan:|Skor:)', main_text, maxsplit=1)
+        #parts = re.split(r'(?i)(7\.\s*Puan:|Puan:|Skor:)', main_text, maxsplit=1)
+
+        #print(main_text)
+
         
-        final_full_text = ""
+        """final_full_text = ""
         if len(parts) >= 3:
             final_full_text += parts[0].strip() + "\n\n"
             final_full_text += "### 6. Soru Seti Cevapları\n"
             final_full_text += lite_text + "\n\n"
             final_full_text += "### " + parts[1] + parts[2]
         else:
-            final_full_text = main_text + "\n\n### 6. Soru Seti Cevapları\n" + lite_text
+            final_full_text = main_text + "\n\n### 6. Soru Seti Cevapları\n" + lite_text"""
+        
+        final_full_text = main_text.strip()
+
+        final_full_text += "\n\n"
+        final_full_text += "### Soru Seti Cevapları\n"
+        final_full_text += lite_text
+        
+        final_full_text = remove_lonely_numbered_lines(final_full_text)
+        final_full_text = remove_sensitive_project_info(final_full_text)
+
+        #print(final_full_text)
 
         # --- PDF OLUŞTURMA ---
         output_filename = f"{safe_title}_{int(time.time())}.pdf"
@@ -277,13 +391,18 @@ def analyze():
         pdf = PDFReport()
         pdf.add_page()
 
+   
+
 
         lines = final_full_text.split('\n')
         for line in lines:
-            if line.startswith('###'):
+            line = normalize_score_line(line)
+        
+            if line.startswith('###') or line.startswith('##'):
+                clean_line = line.replace('#', '').replace('**', '').strip()
                 pdf.ln(4)
                 pdf.set_font(pdf.FONT_NAME, 'B', 12)
-                pdf.write(10, line.replace('#', '').strip())
+                pdf.write(10, clean_line)
                 pdf.ln(10)
             elif line.startswith('---'):
                 pdf.line(10, pdf.get_y(), 200, pdf.get_y())
@@ -292,6 +411,8 @@ def analyze():
                 pdf.write_markdown_line(line)
 
         pdf.output(pdf_path)
+
+
 
         return jsonify({
             "success": True, 
@@ -308,5 +429,12 @@ def analyze():
 def download(filename):
     return send_from_directory(UPLOAD_FOLDER, filename)
 
+
+
 if __name__ == '__main__':
     app.run(debug=True, port=5000)
+
+"""if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 5000))  # Use Render's port if available
+    app.run(host="0.0.0.0", port=port, debug=True)"""
+

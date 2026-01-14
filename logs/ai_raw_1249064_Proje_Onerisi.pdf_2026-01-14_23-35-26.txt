@@ -1,0 +1,100 @@
+=== UPLOADED FILE ===
+1249064_Proje_Onerisi.pdf
+
+=== GENERATED MAIN TEXT ===
+**Giriş**
+
+Bu rapor, TÜBİTAK Teknoloji Odaklı Sanayi Hamlesi Programı kapsamında sunulan "Yerli Endüstriyel Ürünlerin Küresel Tedarik Pazarına Etkin Sunumu için Yapay Zeka destekli e-İhracat ve Satış Platformu" başlıklı proje önerisinin kapsamlı bir değerlendirmesini sunmaktadır. Değerlendirme, projenin temel özellikleri, TÜBİTAK'ın belirlediği üç ana boyut, olası riskler ve ek sorular çerçevesinde yapılmıştır.
+
+---
+
+**Projenin Temel Özellikleri**
+
+*   **Proje Adı:** AI-powered e-Export and Sales Platform for Effective Global Presentation of Domestic Industrial Products
+*   **Proje Süresi:** 24 ay (01.06.2025 - 31.05.2027)
+*   **Toplam Maliyet:** Yaklaşık 12.8 milyon TL.
+*   **Temel Hedefler:** Yerli sanayi firmalarının dijitalleşmesini artırmak, e-ihracat potansiyellerini güçlendirmek, yapay zeka destekli çözümlerle ürün sunumu, satış ve lojistik süreçlerini optimize etmek ve veri yönetimini iyileştirmek.
+*   **Ana Çıktılar:** Otomatik desi ve ağırlık hesaplama sağlayan akıllı terazi ve kamera sistemleri, yapay zeka destekli site içi arama motoru, yapay zeka destekli endüstriyel asistan ve otomatik ürün eşleştirme sistemi.
+*   **Teknoloji Hazırlık Seviyesi (THS):** THS3 seviyesinden THS9 seviyesine yükseltilmesi hedeflenmektedir.
+
+---
+
+**Projenin Belirlenen Kriterlere Göre Değerlendirilmesi**
+
+**I. Endüstriyel Ar-Ge İçeriği, Teknoloji Düzeyi ve Yenilikçi Yönü**
+
+Bu proje, endüstriyel Ar-Ge içeriği, teknoloji düzeyi ve yenilikçi yönleri açısından oldukça güçlü bir potansiyel sunmaktadır. Önerilen platform, Türkiye'deki sanayi firmalarının küresel pazardaki rekabet gücünü artırmak ve dijitalleşme eksikliklerini gidermek gibi önemli bir ihtiyaca yanıt vermektedir. Projenin yenilikçi yönleri, otomatik desi ve ağırlık hesaplama sistemleri, yapay zeka destekli görüntü, yazı ve ses işleyebilen arama motorları, büyük dil modellerine dayalı endüstriyel asistanlar ve otomatik ürün eşleştirme sistemleri gibi net ve somut çıktılarla desteklenmektedir. Bu yaklaşımlar, mevcut e-ticaret platformlarının ötesine geçerek, özellikle endüstriyel ürünlerin karmaşık teknik bilgilerini yönetme ve müşterilere özel çözümler sunma konusunda önemli bir yenilik getirmektedir.
+
+Teknoloji düzeyi açısından, proje yapay zeka, derin öğrenme algoritmaları (CNN, YOLO), büyük dil modelleri (LLM), vektör veritabanları (Faiss, Milvus) gibi ileri teknolojileri kullanmayı hedeflemektedir. Bu teknolojilerin endüstriyel ürünlerin e-ticaretine entegrasyonu, mevcut durumdaki veri seyrekliği ve soğuk başlangıç gibi zorlukların üstesinden gelinmesinde kritik rol oynayacaktır. Kuruluşun bu alandaki "kısıtlı deneyim" beyanı, bu teknolojileri benimseme ve geliştirme konusundaki iddialı hedeflerini göstermekle birlikte, projenin yüksek teknolojik riskini de beraberinde getirmektedir. Ancak, akademik danışmanlık ve yeni personel alımı planları bu riski yönetmeye yönelik adımlar olarak değerlendirilmektedir. Genel olarak, proje uluslararası literatürde bahsedilen güncel trendleri takip etmekte ve bunların ötesine geçerek endüstriyel uygulamalara özgü çözümler sunmayı amaçlamaktadır, bu da Ar-Ge niteliğini güçlendirmektedir.
+
+**II. Proje Planının ve Kuruluş Altyapısının Proje İçin Uygunluğu**
+
+Proje planı, sistem özellikleri ve gereksinim analizinden başlayıp, veri toplama, donanım entegrasyonu, yapay zeka destekli servis geliştirme ve nihai entegrasyon ile test süreçlerini içeren yedi ayrı iş paketi ile detaylı bir şekilde ortaya konmuştur. Gantt şeması ve ara çıktılar listesi, projenin zaman çizelgesini ve kilometre taşlarını net bir şekilde göstermektedir. Bu detaylı planlama, projenin sistematik bir yaklaşımla yürütüleceğini işaret etmektedir.
+
+Kuruluşun altyapısı ve insan kaynakları, projenin mevcut durumunu ve gelecekteki potansiyelini yansıtmaktadır. Mevcut durumda web tabanlı yazılımlar, entegrasyonlar ve otomasyon konularında deneyimli bir ekibe sahip olunması, projenin temel platform altyapısının sağlam olduğunu göstermektedir. Proje lideri Eren Akel ve kilit personel, yazılım, analiz ve veri yönetimi alanlarında tecrübeye sahiptir. Bununla birlikte, proje önerisinde yapay zeka, derin öğrenme ve büyük dil modelleri gibi ileri teknolojilerde "kısıtlı deneyim" belirtilmesi, bu alandaki yetkinliğin geliştirilmesi gerektiğini vurgulamaktadır. Yeni personel alım planları (Yapay Zeka Uzmanı, Donanım Uzmanı vb.) ve Prof. Dr. Halis Altun'dan alınacak akademik danışmanlık hizmeti, bu yetkinlik açığını kapatmaya yönelik önemli adımlardır. Ancak, ileri düzey yapay zeka R&D faaliyetlerini yürütecek çekirdek ekibin akademik derinliği ve geçmiş Ar-Ge harcamalarının (2023/4 için 0 TL görünmesi) bu alandaki önceki yatırımları hakkında daha fazla bilgi faydalı olacaktır. Genel olarak, plan güçlü ve altyapı mevcut taban için yeterli, ancak ileri teknolojiler için insan kaynağı yetkinliği projenin en kritik noktasıdır.
+
+**III. Proje Çıktılarının Ekonomik Yarara ve Ulusal Kazanıma Dönüşebilirliği**
+
+Proje çıktılarının ekonomik yarara ve ulusal kazanıma dönüşebilirliği potansiyeli oldukça yüksektir. Türkiye'nin endüstriyel ürünlerdeki yüksek ithalat bağımlılığı ve yerli firmaların dijitalleşme ve küresel pazarda bilinirlik eksiklikleri, bu projenin hitap ettiği büyük bir pazar boşluğunu ortaya koymaktadır. Önerilen platform, yerli üreticilerin ürünlerini küresel tedarik pazarına etkin bir şekilde sunarak ihracat hacmini artırmayı hedeflemektedir. Yaklaşık 10 milyar USD ek ihracat geliri ve e-ticaret yapan firma sayısında %500 artış beklentisi, projenin iddialı ekonomik hedeflerini göstermektedir.
+
+Detaylı bir fizibilite çalışması ile desteklenen satış hasılatı ve işlem hacmi öngörüleri (ilk yılda 140 milyon TL yurtiçi, 60 milyon TL yurtdışı satış hasılatı ve 1.4 milyon yurtiçi, 600 bin yurtdışı işlem adedi) oldukça umut vericidir. Ayrıca, proje çıktısının ilk yılda maliyetini karşılaması ve 121.640 işlem adedi ile başa baş noktasına ulaşılması, projenin finansal açıdan sürdürülebilirliğini ve hızlı geri dönüş potansiyelini ortaya koymaktadır.
+
+Ulusal kazanımlar açısından, proje doğrudan TÜBİTAK'ın çağrı hedefleriyle örtüşmektedir. Yapay zeka, veri analitiği gibi alanlarda yeni Ar-Ge projelerine zemin hazırlayacak, patent ve lisans potansiyeli yaratacak, nitelikli istihdam (60 ek personel) sağlayacak ve sektörel dönüşüme katkıda bulunacaktır. Küçük ve orta ölçekli işletmelerin (KOBİ) dijitalleşmesini destekleyerek bölgesel ekonomik dengesizlikleri azaltma ve çevreye duyarlı üretim süreçlerini teşvik etme gibi sosyo-kültürel ve çevresel faydaları da bulunmaktadır. Projenin uzun vadeli vizyonu, İzmir Kemalpaşa'da yeni bir tesis yatırımını içermesi, kuruluşun bu alandaki stratejik ve kalıcı taahhüdünü göstermektedir.
+
+---
+
+**Olası Başarısızlık Riskleri ve Alınabilecek Önlemler**
+
+Proje önerisinde, potansiyel riskler ve bunlara karşı alınacak önlemler detaylı bir şekilde açıklanmıştır.
+
+1.  **Tecrübeli Proje Personelinin Ayrılması:**
+    *   **Risk Açıklaması:** Özellikle ileri düzey yapay zeka alanında, firmanın mevcut deneyim kısıtlılığı göz önüne alındığında, anahtar personelin ayrılması projenin ilerlemesini ciddi şekilde etkileyebilir.
+    *   **Alınabilecek Önlemler:** Personel motivasyonunu artırıcı uygulamalar, bilgi ve deneyimin şirket içinde kalmasını sağlayacak dokümantasyon ve sürekli eğitim programları, yeni yeteneklerin şirkete kazandırılması.
+    *   **B Planı:** Üniversitelerle işbirliği yaparak akademik danışman yönlendirmesiyle yetenekli personel istihdam etmek (staj, proje, bootcamp gibi etkinliklerle).
+
+2.  **Veri Seti Oluşturma ve Algoritma Geliştirme Zorlukları:**
+    *   **Risk Açıklaması:** Endüstriyel ürünlerin çeşitliliği nedeniyle doğru ve kaliteli veri setleri oluşturmak, karmaşık algoritmalar yazmak ve bu süreçlerde hata payını minimize etmek zaman alıcı olabilir.
+    *   **Alınabilecek Önlemler:** İlgili endüstriyel ürün gruplarında yetkin kişilerle danışmanlık almak ve her ürün grubunun bu uzmanlar tarafından denetlenmesini sağlamak. Ön fizibilite çalışmalarında veri giriş ekranı ve akış süreçleri tasarımı yapılmış olması olumlu bir göstergedir.
+    *   **B Planı:** İnsan kaynaklarının etkin kullanımı, gerekirse ek kaynakların veri analizi ve test süreçlerine kaydırılması. Büyük ve etiketlenmiş veri setleri için açık kaynak araçlar (CVAT) kullanılması, veri kalitesini artıracaktır.
+
+3.  **Yapay Zeka Tabanlı Öneri Sisteminin İstenilen Etkinlik Düzeyine Ulaşamaması:**
+    *   **Risk Açıklaması:** Geliştirilen yapay zeka modellerinin, endüstriyel ürünlerin karmaşıklığı ve kullanıcı beklentileri nedeniyle beklenen doğruluk ve hız performansına ulaşamaması riski mevcuttur.
+    *   **Alınabilecek Önlemler:** Kullanılan yöntemlere alternatif yöntemler geliştirmek ve test süreçlerinde sürekli iyileştirmeler yapmak. Büyük dil modellerinin (LLM, BERT vb.) platforma özel ince ayar yapılması.
+    *   **B Planı:** Eğitim için oluşturulan veritabanlarının çeşitlendirilmesi ve zenginleştirilmesi, alternatif modellerin bu veritabanları ile eğitilmesi.
+
+4.  **Benzer Rakip Ürünlerin Ortaya Çıkması (Ticarileşme Riski):**
+    *   **Risk Açıklaması:** Pazarda benzer işlevlere sahip rakip platform veya çözümlerin ortaya çıkması, projenin pazar payını ve ekonomik başarısını etkileyebilir.
+    *   **Alınabilecek Önlemler:** Sektör ihtiyaçlarının hızlı tespiti, mevcut pazar hakimiyetini ve kuruluşu avantajlı kılan özgün yetkinlikleri kullanmak.
+    *   **B Planı:** Daha rekabetçi hizmet bedeli sunmak, entegre çözümlerin etkin kullanımı, müşteri ve satıcılara sunulan hizmetlerin ve kolaylıkların sürekli artırılması.
+
+5.  **Veri Güvenliği ve Gizliliği (Ek Risk):**
+    *   **Risk Açıklaması:** Platformun büyük miktarda hassas endüstriyel ve müşteri verisi işleyecek olması nedeniyle veri güvenliği ihlalleri veya KVKK gibi regülasyonlara uyumsuzluk riski.
+    *   **Alınabilecek Önlemler:** Güçlü siber güvenlik önlemleri (örneğin, ISO 27001 uyumu), düzenli güvenlik denetimleri, verilerin şifrelenmesi, erişim kontrolleri, personel eğitimi ve kapsamlı bir olay müdahale planı. KVKK ve uluslararası veri koruma düzenlemelerine tam uyumun sağlanması.
+
+6.  **Yapay Zeka Çözümlerinin Ölçeklenebilirliği (Ek Risk):**
+    *   **Risk Açıklaması:** Kullanıcı sayısı ve veri hacmi arttıkça, yapay zeka modellerinin performansını ve maliyet etkinliğini korumak için gerekli hesaplama kaynaklarının sağlanamaması.
+    *   **Alınabilecek Önlemler:** Yapay zeka mimarisini ölçeklenebilir olacak şekilde tasarlamak (bulut tabanlı çözümler, mikroservisler), verimli model mimarileri ve optimizasyon teknikleri kullanmak. Kullanım büyümesine göre kademeli donanım yükseltmeleri veya bulut hizmetlerinin ölçeklendirilmesi için planlama yapmak.
+
+---
+
+**Kritik Ek Sorular**
+
+1.  Kuruluşun yapay zeka, derin öğrenme ve büyük dil modelleri alanlarındaki "kısıtlı deneyimi" göz önüne alındığında, mevcut ve yeni personele yönelik, akademik danışmanlığın ötesinde, ileri düzey Ar-Ge çalışmalarını bağımsız yürütebilecekleri özel eğitim ve geliştirme planları nelerdir?
+2.  2023/4 dönemi için Ar-Ge giderleri "0" olarak belirtilmiştir. Kuruluşun bu iddialı projeye başlamadan önceki Ar-Ge yatırımları ve faaliyetleri hakkında daha fazla bilgi verilebilir mi?
+3.  Proje kapsamında planlanan büyük ölçekli yatırım (İzmir Kemalpaşa'da tesis) ve 100 milyon TL'lik kredi kullanımına ilişkin finansal projeksiyonlar ve acil durum planları detaylandırılabilir mi? Özellikle mevcut öz kaynaklarla bu ölçekteki bir borçlanmanın uzun vadeli finansal sürdürülebilirliği nasıl sağlanacaktır?
+4.  Platformun, ERP/CRM entegrasyonları ve küresel erişimi de göz önüne alındığında, büyük miktarda endüstriyel ürün ve kullanıcı verisinin güvenliğini ve gizliliğini (KVKK ve uluslararası düzenlemelere uyum dahil) sağlamak için ne gibi spesifik siber güvenlik önlemleri ve stratejileri uygulanacaktır?
+5.  Platformun kullanıcı ve veri hacmi arttıkça, yapay zeka modellerinin (LLM'ler, derin öğrenme) eğitimi ve çalıştırılmasıyla ilişkili hesaplama kaynakları ve maliyetleri nasıl yönetilecektir? Ölçeklenebilirliği sağlamak için hangi optimizasyon ve altyapı stratejileri benimsenecektir?
+
+---
+
+**Puan ve Gerekçesi**
+
+**Puan: 88/100**
+
+**Gerekçe:**
+
+Bu proje önerisi, TÜBİTAK 1501 Sanayi Ar-Ge Destek Programı'nın hedefleriyle yüksek düzeyde uyum sağlamaktadır. Türkiye'nin endüstriyel ürünler ihracat potansiyelini artırma ve yerli firmaların dijital dönüşümünü hızlandırma gibi kritik ulusal ihtiyaçlara yenilikçi, yapay zeka destekli çözümler sunmayı hedeflemesi güçlü bir yönüdür. Projenin yenilikçi çıktıları (otomatik desi/ağırlık, yapay zeka destekli arama motoru ve asistan, otomatik ürün eşleştirme) ve kullanılacak ileri teknolojiler (derin öğrenme, LLM'ler, vektör veritabanları) Ar-Ge içeriği ve teknoloji düzeyi açısından oldukça iddialı ve değerlidir. Ekonomik ve ulusal kazanım potansiyeli çok yüksek olup, detaylı fizibilite ve finansal öngörülerle desteklenmektedir.
+
+Proje planlaması ve iş paketleri net, ölçülebilir kilometre taşları ile iyi yapılandırılmıştır. Kuruluşun mevcut yazılım ve entegrasyon deneyimi sağlam bir temel sunmaktadır. Ancak, projenin merkezindeki yapay zeka, derin öğrenme ve büyük dil modelleri konularında kuruluşun kendi beyanıyla "kısıtlı deneyim"e sahip olması, projenin yürütülmesi sırasında insan kaynağı yetkinliği açısından en önemli risk faktörüdüdür. Yeni personel alımı ve akademik danışmanlık bu riski azaltmaya yönelik önemli adımlar olsa da, temel R&Ge ekibinin bu alanlardaki derinlikli bilimsel ve teknik bilgisi, projenin iddialı hedeflerine ulaşmasında kritik rol oynayacaktır. Bu durum, projenin yüksek potansiyeline rağmen, gerçekleştirilebilirlik açısından küçük bir soru işareti oluşturmaktadır.
+
+Risk yönetimi planı yeterli düzeydedir ve olası sorunlara karşı B planları mevcuttur. Genel olarak, projenin kapsamı, hedefleri ve potansiyel etkileri, mevcut risklerin yönetilebilir olduğu kabul edildiğinde, yüksek düzeyde desteklenmeyi hak etmektedir.
