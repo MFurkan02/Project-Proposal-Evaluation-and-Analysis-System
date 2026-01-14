@@ -1,0 +1,93 @@
+=== UPLOADED FILE ===
+7250784_Proje_Onerisi.pdf
+
+=== GENERATED MAIN TEXT ===
+**Proje Numarası:** [Gizli Bilgi - Omit]
+**Proje Adı:** [Gizli Bilgi - Omit]
+**Kuruluş Adı:** [Gizli Bilgi - Omit]
+**Değerlendirme Tarihi:** 26 Mayıs 2024
+
+### 1. Projenin Temel Özellikleri
+
+Bu proje, çok oyunculu, yapay zeka destekli ve çok dilli bir kelime bulmaca oyunu geliştirmeyi hedeflemektedir. Projenin temel özellikleri şunlardır:
+
+*   **Proje Süresi:** 15 ay
+*   **Başlama Tarihi:** 01.09.2025
+*   **Bitiş Tarihi:** 30.11.2026
+*   **Teknoloji Grubu:** Bilişim Teknolojileri
+*   **NACE Kodu:** 58.21 Bilgisayar oyunlarının yayımlanması
+*   **GTİP Kodu:** 98 (Akit taraflarca, özel amaçlarda kullanılmak üzere saklı tutulmuştur.)
+*   **Başlangıç Teknoloji Hazırlık Seviyesi (THS):** THS3 (Analitik ve tecrübeye dayalı olarak, kritik işlev ve/veya özellik kanıtlandı.)
+*   **Hedeflenen Teknoloji Hazırlık Seviyesi (THS):** THS8 (Sistem tamamlandı ve performans değerlendirmesi test ve gösterimle yapıldı.)
+*   **Başarı Ölçütleri:**
+    *   İlk yılın sonunda ulaşılacak minimum kullanıcı sayısı: 10000
+    *   NLP ile eğitilecek minimum dil sayısı: 2
+    *   Socket gecikmesi maksimum: 50ms
+*   **Proje Bütçesi (Toplam Maliyet):** 2.229.534 TL
+    *   Personel Maliyeti: 1.798.600 TL
+    *   Alet/Teçhizat/Yazılım/Yayın Alımları: 280.934 TL
+    *   Yurtiçi Danışmanlık ve Hizmet Alımları: 150.000 TL
+*   **İş Paketleri:** Analiz Çalışmaları, Görsel Tasarım, Unity Geliştirmeleri, Arka Uç Geliştirmeleri, Testler, Yapay Zeka Geliştirmeleri, Unity - Arka Uç Entegrasyonu.
+
+### 2. Projenin Belirlenen Kriterlere Göre Değerlendirilmesi
+
+#### I. Boyut: Endüstriyel Ar-Ge İçeriği, Teknoloji Düzeyi, ve Yenilikçi Yönü
+
+Bu proje önerisi, kelime bulmaca oyunları pazarında önemli yenilikler sunarak güçlü bir Ar-Ge içeriği sergilemektedir. Özellikle yapay zeka destekli çok dilli kelime önerme sistemi ve gerçek zamanlı çok oyunculu altyapı, mevcut oyunların sınırlılıklarını aşma potansiyeli taşımaktadır. Çok dilli destek, uluslararası pazarlara hitap etme ve dil öğrenimi süreçlerine entegrasyon sağlama kapasitesiyle uluslararası yenilik boyutunu güçlendirmektedir. Proje, Unity motoru, Java tabanlı arka uç, mikroservis mimarisi ve WebSocket teknolojileri gibi güncel ve ileri teknolojileri kullanmayı planlamaktadır. Bu teknolojik seçimler, projenin sadece mevcut durumu iyileştirmekle kalmayıp, yeni bir oyun platformu oluşturma hedefiyle de uyumludur. Başlangıç TRL seviyesi 3'ten, tamamlanmış ve test edilmiş bir sistem olan TRL 8'e yükseltme hedefi, projenin derinlemesine Ar-Ge odaklı olduğunu göstermektedir. Geliştirilecek yapay zeka botları ve özel oyun mekanikleri (jokerler, rakibi zorlama güçleri) de oyun deneyimini zenginleştirerek sektörde rekabetçi bir avantaj sağlamayı vaat etmektedir. Ancak, proje başlığında belirtilen "Özel Dizilimli Klavye" kavramının yenilikçi yönleri ve teknik detayları, kelime önerme sistemi kadar detaylı açıklanmamıştır, bu da bu özgün özelliğin potansiyelini tam olarak yansıtamamaktadır.
+
+#### II. Boyut: Proje Planının ve Kuruluş Altyapısının Proje İçin Uygunluğu
+
+Proje planı, yedi ana iş paketi altında detaylı bir şekilde sunulmuştur ve her iş paketi için ara çıktılar ile beklenen gerçekleşme tarihleri belirtilmiştir. Çevik proje yönetim metodolojileri ve DevOps pratiklerinin benimsenmesi, projenin esnekliğini, ölçeklenebilirliğini ve değişikliklere hızlı adaptasyon yeteneğini artıracaktır. Kuruluş, 20 yılı aşkın yazılım geliştirme tecrübesi, gerçek zamanlı sistemler ve çevik yazılım geliştirme konusundaki yetkinliği ile oyun sektörüne adaptasyon kabiliyetini kanıtlamıştır. Proje yürütücüsü ve ekibinin yazılım mühendisliği alanındaki deneyimi, özellikle Unity ve arka uç geliştirmelerinde gerekli yetkinliği sunmaktadır. Ar-Ge biriminin mevcut simülasyon, modelleme, alet-teçhizat ve yazılım araçları gibi olanakları, projenin başarıyla yürütülmesi için uygun bir altyapı sağlamaktadır. AI kısmında akademik danışmanlık alınacak olması, bu alandaki teknik belirsizliklerin yönetilmesinde önemli bir destekleyici unsurdur. Genel olarak, proje planı gerçekçi ve kuruluşun mevcut kapasitesi ile uyumludur.
+
+#### III. Boyut: Proje Çıktılarının Ekonomik Yarara ve Ulusal Kazanıma Dönüşebilirliği
+
+Proje, mobil oyun sektörünün hızla büyüyen pazarında, özellikle kelime bulmaca oyunları kategorisinde önemli bir ticari potansiyele sahiptir. Belirlenen gelir modelleri (uygulama içi satın almalar, reklam gelirleri, özel turnuvalar ve sponsorluklar) çeşitlendirilmiş ve gerçekçi görünmektedir. İlk yıl için 10.000, üçüncü yıl için 100.000 ve beşinci yıl için 1.000.000 aktif kullanıcı hedefi ile pazar payı öngörüleri (0.001-0.005%, 0.1-0.2%, 0.5%) iddialı ancak ulaşılabilir hedeflerdir. Projenin 15-20 ay içinde başa baş noktasına ulaşma tahmini, sağlam bir ticari planlamaya işaret etmektedir. Ulusal düzeyde, proje, Türkiye'nin dijital oyun sektöründeki rekabet gücünü artıracak, yazılım ihracatına katkıda bulunacak ve yeni istihdam alanları yaratacaktır. Dil becerilerinin geliştirilmesi, eğitimin erişilebilirliği ve kültürlerarası etkileşim gibi sosyal faydalar, projenin toplumsal etkisini artırmaktadır. Çevresel etkiler konusunda ise dijitalleşmenin olumlu yönleri vurgulanmış ve olası enerji sarfiyatına karşı yeşil yazılım standartları ile önlemler alınacağı belirtilmiştir. Fikri mülkiyet haklarının korunmasına yönelik çalışmalar da planlanmıştır.
+
+### 3. Olası Başarısızlık Riskleri ve Alınacak Önlemler
+
+Projenin başarısı için kritik öneme sahip bazı riskler ve bunlara karşı öngörülen önlemler aşağıda detaylandırılmıştır:
+
+1.  **Gerçek Zamanlı Çok Oyunculu Sistemde Gecikmeler (Etki: Orta):**
+    *   **Risk:** Farklı coğrafyalardaki oyuncular arasında düşük gecikme süresine sahip, yüksek performanslı bir ağ altyapısı kurmak teknik bir zorluk teşkil edebilir.
+    *   **Alınacak Önlemler:** Optimize edilmiş ağ altyapısı tasarımı, yük dengeleme algoritmaları ve düşük gecikmeli veri iletimi için WebSocket teknolojilerinin kullanımı.
+    *   **Risk Gerçekleşirse Yapılacaklar (B Planı):** Daha uygun donanımlı altyapı tedarik edilmesi, ağ mimarisinin daha detaylı optimizasyonları ve CDN (İçerik Dağıtım Ağı) kullanımı ile gecikmelerin minimize edilmesi.
+
+2.  **Çok Dilli Kelime Önerme Sisteminin Doğruluğu (Etki: Orta):**
+    *   **Risk:** Yapay zeka ve doğal dil işleme (NLP) teknolojileri kullanılarak çok dilli bir kelime önerme sistemi geliştirmek, dil çeşitliliği ve dil yapısındaki farklılıklar nedeniyle önemli bir zorluktur. Her dilin özgün sözdizimi ve semantik özelliklerini doğru bir şekilde işleyebilmek için gelişmiş NLP modellemeleri gerekmektedir.
+    *   **Alınacak Önlemler:** Gelişmiş NLP modelleri kullanılması, modellerin sürekli eğitimi ve kullanıcı geri bildirimleriyle sürekli iyileştirilmesi.
+    *   **Risk Gerçekleşirse Yapılacaklar (B Planı):** NLP modellerinin daha da optimize edilmesi, ilgili dilde uzman kişilerle (dilbilimciler) işbirliği yapılması, daha geniş ve çeşitli veri setleriyle modellerin yeniden eğitilmesi.
+
+3.  **Mobil ve Web Platformları Arasında Entegrasyon Sorunları (Etki: Düşük):**
+    *   **Risk:** Farklı platformlar arasında sorunsuz bir entegrasyonu sağlamak beklenenden daha karmaşık olabilir.
+    *   **Alınacak Önlemler:** Mikroservis mimarisi ile ölçeklenebilir ve esnek bir sistem tasarımı. RESTful API'lar ve ortak veri formatları kullanarak entegrasyonu standartlaştırma.
+    *   **Risk Gerçekleşirse Yapılacaklar (B Planı):** Donanım ve kod altyapısının iyileştirilmesi, entegrasyon katmanlarının yeniden gözden geçirilmesi ve üçüncü taraf entegrasyon araçlarının kullanımı.
+
+4.  **Siber Güvenlik Açıkları (Etki: Yüksek):**
+    *   **Risk:** Kullanıcı verilerinin güvenliğini ve gizliliğini sağlamak, özellikle çok oyunculu ve çevrimiçi bir platformda büyük önem taşımaktadır. Siber saldırılara (DDoS, veri ihlali) maruz kalma riski.
+    *   **Alınacak Önlemler:** Kritik verilerin şifrelenmesi, DDoS koruma önlemleri, düzenli güvenlik testleri (penetrasyon testi, zafiyet taraması), güvenlik duvarı ve erişim kontrol mekanizmaları.
+    *   **Risk Gerçekleşirse Yapılacaklar (B Planı):** Konuda uzman firmalardan dışarıdan danışmanlık alınması, ek güvenlik prosedürleri ve protokollerinin uygulanması, olay yanıt planlarının oluşturulması ve düzenli güvenlik eğitimleri.
+
+5.  **Geliştirme Sürecinde Bütçenin Aşılması (Etki: Orta):**
+    *   **Risk:** Beklenmedik teknik zorluklar veya kaynak maliyetlerindeki artışlar nedeniyle projenin bütçesi aşılabilir.
+    *   **Alınacak Önlemler:** Maliyet takibi ve düzenli bütçe gözden geçirmeleri, alternatif fon kaynaklarının (kişisel varlıklar, krediler, yatırımcılar) araştırılması ve hazır tutulması.
+    *   **Risk Gerçekleşirse Yapılacaklar (B Planı):** Krediler, borçlanma veya ek yatırımcı bulma yoluyla alternatif kaynaklar yaratılması, maliyet düşürücü önlemlerin gözden geçirilmesi.
+
+6.  **Beklenen Gelir Akışına Geç Ulaşılması (Etki: Orta):**
+    *   **Risk:** Pazarlama stratejilerinin yetersiz kalması veya rekabetin beklenenden daha yoğun olması nedeniyle gelir hedeflerine geç ulaşılabilir.
+    *   **Alınacak Önlemler:** Pazarlama faaliyetlerinin periyodik olarak gözden geçirilmesi ve optimize edilmesi, kullanıcı bağlılığını artırmak için ücretsiz kullanım seçeneklerinin ve promosyonların teşvik edilmesi.
+    *   **Risk Gerçekleşirse Yapılacaklar (B Planı):** Pazarlama ve reklam faaliyetlerine kişisel kaynakların yönlendirilmesi, yeni pazarlama kanallarının araştırılması, kullanıcı geri bildirimleriyle ürünün iyileştirilmesi ve gelir modellerinin çeşitlendirilmesi.
+
+### 4. Kritik Ek Sorular
+
+1.  Proje başlığında yer alan "Özel Dizilimli Klavye"nin, mevcut sanal klavyelere göre tam olarak hangi yenilikleri ve kullanıcı deneyimi geliştirmelerini sunduğu detaylandırılabilir mi? Bu özel klavyenin teknik mimarisi ve geliştirme zorlukları nelerdir?
+2.  "Kelime Önerme & Sözlük Oluşturma Robotu" için belirtilen akademik danışmanlığın kapsamı ve danışmanın projeye somut katkıları nasıl ölçülecektir? Danışmanlık sürecine dair detaylı bir çalışma planı mevcut mudur?
+3.  Projede belirtilen "yeşil yazılım standartları"nın uygulanması için spesifik olarak hangi standartlar (örn. ISO 14001, IEEE 1633) hedeflenmekte ve bu standartlara uyumun izlenmesi ve doğrulanması nasıl yapılacaktır?
+4.  Çok dilli kelime önerme sisteminin, Türkçe ve İngilizce dışındaki diller için sözlük kalitesi, doğruluk ve güncellik açısından nasıl bir strateji izleyeceği ve bu dillerin kültürel bağlamına uygunluğunu nasıl sağlayacağı açıklanabilir mi?
+5.  Projenin hedeflediği 1 milyon kullanıcıya ulaşılması durumunda, AWS bulut sunucu hizmetleri dışındaki ek altyapı veya hizmet sağlayıcılarına ihtiyaç duyulacak mıdır ve bu durumun maliyet ve performans üzerindeki potansiyel etkisi öngörülmekte midir?
+
+### 5. Puanlama ve Gerekçe
+
+**Puan: 78/100**
+
+**Gerekçe:**
+Proje önerisi, dijital oyun sektöründe yenilikçi ve rekabetçi bir ürün geliştirme potansiyeline sahip, kapsamlı ve iyi düşünülmüş bir yaklaşıma sahiptir. Yapay zeka destekli çok dilli kelime önerme sistemi, gerçek zamanlı çok oyunculu deneyim ve özel oyun mekanikleri gibi Ar-Ge odaklı unsurlar, projenin teknolojik derinliğini ve yenilikçi yönünü güçlendirmektedir. Proje planı, çevik metodolojiler ve detaylı iş paketleriyle sağlam bir yapıya sahip olup, kuruluşun ilgili alandaki deneyimi ve altyapısı projenin yürütülmesi için yeterli görünmektedir. Ticari potansiyeli yüksek, net gelir modelleri ve ulaşılabilir pazar hedefleri belirlenmiş, ulusal ekonomiye ve toplumsal faydaya katkı sağlayacak unsurlar içermektedir. Riskler tanımlanmış ve bunlara yönelik makul önlemler sunulmuştur. Ancak, proje başlığında belirtilen "Özel Dizilimli Klavye"nin özgünlüğü ve detayları, projenin diğer yenilikçi özelliklerine göre daha az vurgulanmıştır. Ayrıca, yeşil yazılım standartlarının somut uygulama detayları ve akademik danışmanlık süreçlerinin daha net çerçevelendirilmesi, projenin genel kalitesini daha da artırabilir. Bu minor eksiklikler, projenin genel başarısını ciddi şekilde etkilemese de, mükemmeliyet yolunda iyileştirilebilecek alanları temsil etmektedir.

@@ -1,0 +1,102 @@
+=== UPLOADED FILE ===
+1249159_Proje_Onerisi.pdf
+
+=== GENERATED MAIN TEXT ===
+**Tarih:** 25 Mayıs 2024
+
+**Proje Adı:** Yapay Zeka Tabanlı Siber Tehdit Tespit, Analiz ve Müdahale Uygulaması
+
+**1. Proje Temel Özellikleri**
+
+Bu proje, siber güvenlik operasyon merkezlerinde (SOC) insan kaynaklı hataları azaltmayı, tehdit tespit, analiz ve müdahale süreçlerini hızlandırmayı ve otomatikleştirmeyi hedefleyen yapay zeka tabanlı bir siber tehdit tespit, analiz ve müdahale uygulaması geliştirmeyi amaçlamaktadır.
+
+*   **Proje Süresi:** 24 ay
+*   **Başlangıç Tarihi:** 01.01.2025
+*   **Bitiş Tarihi:** 31.12.2026
+*   **Teknoloji Grubu:** Bilişim Teknolojileri Grubu
+*   **Ana Amaç:** Siber güvenlik uzmanlarının insan bağımlılığını azaltacak, tehdit analizini hızlı, akıllı ve doğru bir şekilde gerçekleştiren, hibrit (insan-yapay zeka işbirliği) bir MDR çözümü geliştirmek.
+*   **Hedeflenen Başarı Ölçütleri:**
+    *   Geliştirilecek Kural ve Use-Case Sayısı: +500
+    *   Playbook sayısı: +50
+    *   Saldırı tespit başarı oranı: >%90
+    *   Saldırı türü sınıflandırma başarı oranı: >%80
+    *   Tehdit analiz süresindeki kısalma oranı: %60
+*   **Başlangıç Teknoloji Hazırlık Seviyesi (THS):** THS1 (Temel ilkeler gözlendi ve raporlandı)
+*   **Hedeflenen Teknoloji Hazırlık Seviyesi (THS):** THS7 (Prototip operasyonel ortamda gösterildi)
+*   **Toplam Maliyet:** 40.903.667,05 TL
+*   **Kâra Geçiş Noktası Hedefi:** Proje başlangıcından itibaren 42. ay.
+
+**2. Projenin Belirlenen Kriterlere Göre Değerlendirilmesi**
+
+**I. Endüstriyel Ar-Ge İçeriği, Teknoloji Düzeyi ve Yenilikçi Yönü**
+
+Proje, güncel siber güvenlik operasyonlarında karşılaşılan temel sorunlara (sofistike saldırılar, artan tehdit hacmi, insan kaynaklı hatalar, nitelikli personel eksikliği ve yorgunluğu) doğrudan odaklanmaktadır. Mevcut SIEM (Security Information and Event Management) ve SOAR (Security Orchestration, Automation and Response) çözümlerinin statik kural tabanlı yapılarının sınırlılıklarını aşmayı hedeflemektedir. Bu bağlamda, yapay zeka tabanlı algoritmaların (makine öğrenimi, büyük dil modelleri - LLM) siber tehdit tespiti, analizi ve olay müdahale süreçlerine entegrasyonu projenin temel Ar-Ge içeriğini oluşturmaktadır.
+
+Teknoloji düzeyi açısından proje, sektördeki mevcut çözümlerin ötesine geçerek, otomatik kural ve senaryo belirleme, sıfırıncı gün saldırılarını proaktif tespit etme ve insan zekası ile yapay zekanın işbirliği içinde çalıştığı hibrit bir model önermektedir. Özellikle LLM'lerin tehdit tespit kuralları ve playbook'ların otomatik oluşturulmasında kullanılması, hem deneysel araştırmaların ötesine geçen hem de endüstriyel uygulaması henüz yaygın olmayan yenilikçi bir yaklaşımdır. Proje, THS1'den THS7'ye ulaşmayı hedefleyerek önemli bir teknolojik sıçramayı öngörmektedir. Mevcut sistemlerle uyumlu entegrasyon yeteneği ve ölçeklenebilirlik, projenin uygulanabilirliğini ve teknolojik derinliğini artırmaktadır. Bu kapsamda, projenin endüstriyel Ar-Ge içeriği ve teknolojik yenilik seviyesi oldukça yüksektir.
+
+**II. Proje Planının ve Kuruluş Altyapısının Proje İçin Uygunluğu**
+
+Proje planı, yedi ana iş paketi altında detaylı bir şekilde yapılandırılmış olup, gereksinim analizi, kavramsal modelleme, veri seti oluşturma, yapay zeka modellerinin geliştirilmesi ve eğitimi, uygulama geliştirme, sistem entegrasyonu ve test gibi kritik aşamaları içermektedir. Gantt şeması, faaliyetlerin başlangıç-bitiş tarihleri ve sürelerini net bir şekilde göstermekte, proje yönetimi için şeffaf bir çerçeve sunmaktadır. SCRUM metodolojisi, Atlassian Jira ve Confluence gibi modern proje yönetim araçlarının kullanılması, geliştirme sürecinin çevik ve etkin bir şekilde yürütüleceğini göstermektedir.
+
+Kuruluşun altyapısı ve personel yeterliliği, projenin başarısı için güçlü bir temel sağlamaktadır. Kuruluş, yaklaşık 105 Ar-Ge personeli, iki tescilli Ar-Ge merkezi (Ankara ve İstanbul) ile önemli bir Ar-Ge kapasitesine sahiptir. Mevcut donanım (sunucular, bilgisayarlar, network cihazları) ve yazılım araçları (TensorFlow, PyTorch, Webstorm vb.) projenin teknik ihtiyaçlarını karşılayacak düzeydedir. Proje ekibinde, yapay zeka ve yazılım geliştirme mühendisleri, siber güvenlik mühendisleri ve analistleri gibi farklı uzmanlık alanlarından 13 deneyimli personelin bulunması, projenin multidisipliner yapısına uygun bir ekip kurgusu olduğunu göstermektedir. Ayrıca, Gartner, SANS ve ENISA gibi uluslararası bilimsel kütüphanelere erişim, projenin güncel bilgilere dayalı olarak ilerlemesini destekleyecektir. Bu güçlü altyapı ve yetkin insan kaynağı, projenin belirlenen hedeflere ulaşma potansiyelini önemli ölçüde artırmaktadır.
+
+**III. Proje Çıktılarının Ekonomik Yarara ve Ulusal Kazanıma Dönüşebilirliği**
+
+Proje çıktısı, hızla büyüyen ve milyarlarca dolarlık bir pazar büyüklüğüne sahip olan Yönetilen Tespit ve Müdahale (MDR) hizmetleri pazarına yönelik yenilikçi bir çözüm sunmaktadır. 2023 yılında 6 milyar ABD doları olan bu pazarın, 2028'de 14 milyar ABD dolarına ulaşması beklenmektedir. Projenin hedeflediği pazar, hem Türkiye'deki kamu ve özel sektör kuruluşları (savunma, enerji, finans, sağlık) hem de uluslararası MSSP'ler (Managed Security Service Providers) ve dağıtıcıları kapsamaktadır.
+
+Ekonomik kazanımlar açısından, projenin kâra geçiş noktasının 42 ay olarak öngörülmesi, bu ölçekte bir Ar-Ge projesi için makul bir süredir. Ticarileşme stratejisi, hem şirketin kendi MDR servislerinde kullanılarak verimliliği artırma hem de diğer MSSP'lere lisanslama yoluyla doğrudan satış geliri elde etme üzerine kurulmuştur. İlk yıl 1 milyon USD, üçüncü yıl ise yurtiçi ve yurtdışı toplamda 3 milyon USD'lik satış hasılatı hedefleri, pazar potansiyeli ve şirketin mevcut yetkinlikleri göz önüne alındığında gerçekçidir.
+
+Ulusal kazanımlar açısından proje, Türkiye'nin siber güvenlik alanındaki teknolojik dışa bağımlılığını azaltacak ve yerli bir çözüm sunacaktır. Siber saldırıların neden olduğu milyarlarca dolarlık zararları azaltarak ülke ekonomisine katkı sağlayacak, kritik altyapıların siber dayanıklılığını artıracaktır. Ayrıca, uluslararası pazarda rekabet edebilecek bir ürünle teknoloji ihracatına katkı sağlama potansiyeline sahiptir. Şirketin mevcut uluslararası yapılanmaları (Amsterdam, Katar, Azerbaycan ofisleri ve Offensify online platformu), projenin uluslararası ticarileşme hedeflerini desteklemektedir. Proje, BM Sürdürülebilir Kalkınma Hedefleri (Sanayi, Yenilikçilik ve Altyapı; Barış, Adalet ve Güçlü Kurumlar) ile de uyumluluk göstererek toplumsal fayda sağlamayı amaçlamaktadır.
+
+**3. Olası Başarısızlık Riskleri ve Bu Risklere Karşı Alınabilecek Önlemler**
+
+1.  **Risk: Yapay Zeka Modellerinin Performansının Beklentilerin Altında Kalması (Tespit Başarısı <%90):**
+    *   **Açıklama:** Yapay zeka modellerinin, özellikle yeni ve karmaşık tehditlere karşı yeterli doğrulukta tespit yapamaması veya yüksek yanlış pozitif/negatif oranları üretmesi, projenin temel hedefi olan etkin tehdit tespiti başarımını olumsuz etkileyebilir. Veri setlerinin yeterliliği ve kalitesi bu riskin ana nedenidir.
+    *   **Önlemler:**
+        *   **Veri Seti Genişletme ve Kalite Kontrolü:** Sürekli ve kapsamlı bir tehdit verisi havuzu oluşturulacak, veriler uzmanlar tarafından etiketlenecek ve periyodik kalite kontrol süreçleriyle güncelliği ve doğruluğu sağlanacaktır.
+        *   **Algoritma Çeşitlendirmesi ve Kombinasyon:** LSTM, Random Forest, XGBoost gibi farklı ve güçlü sınıflandırma algoritmaları alternatif olarak değerlendirilecek, gerektiğinde ensemble (kombine) yöntemler kullanılarak model performansı optimize edilecektir. Çok katmanlı analiz sistemi ile ön eleme ve derinlemesine doğrulama yapılarak yanlış pozitifler azaltılacaktır.
+        *   **Sürekli Öğrenme ve Adaptasyon:** Yeni tehdit türleri ve saldırı teknikleri hakkında sürekli öğrenme kapasitesi entegre edilecek, modellerin dinamik tehdit ortamına adapte olabilmesi için online öğrenme mekanizmaları geliştirilecektir.
+
+2.  **Risk: Nitelikli Personel Kaybı veya Finansman Yetersizliği:**
+    *   **Açıklama:** Proje sürecinde anahtar pozisyondaki personelin ayrılması veya beklenmeyen finansal kısıtlamalar, projenin iş planına uygun yürütülmesini aksatabilir ve süreyi uzatabilir.
+    *   **Önlemler:**
+        *   **Personel Yedekleme ve Bilgi Dokümantasyonu:** Uzmanlık alanı gerektiren pozisyonlar için yedek personel havuzu oluşturulacak ve kritik bilgiler detaylı şekilde dokümante edilerek bilgi kaybı riski minimize edilecektir. Çapraz eğitim programları ile bilgi aktarımı sağlanacaktır.
+        *   **Çoklu Finansman Kaynakları:** TÜBİTAK desteği dışında, alternatif fon kaynakları (örneğin, diğer Ar-Ge destek programları, özel sektör yatırımları) araştırılacak ve finansal esneklik sağlanacaktır. Bütçe yönetimi süreçleri düzenli olarak gözden geçirilecektir.
+
+3.  **Risk: Uluslararası Pazarda Ticarileşme Zorlukları:**
+    *   **Açıklama:** Global pazarda güçlü rekabet, yerelleşme ihtiyaçları veya beklenmedik pazar giriş engelleri, projenin öngörülen ekonomik beklentilerini geciktirebilir.
+    *   **Önlemler:**
+        *   **Pazar Çeşitlendirmesi ve Yerelleşme:** Avrupa, Orta Doğu (Katar, Azerbaycan) gibi farklı coğrafi pazarlara yönelik özel stratejiler geliştirilecek, ürünün yerel regülasyonlara ve müşteri ihtiyaçlarına göre uyarlanması sağlanacaktır.
+        *   **Stratejik Ortaklıklar ve Online Platformlar:** Avrupa'daki Yönetilen Güvenlik Servis Sağlayıcıları (MSSP) ve distribütörlerle işbirlikleri kurulacak, "Offensify" gibi online ticaret platformları aracılığıyla küresel erişim artırılacaktır. Uluslararası etkinliklere katılım ve tanıtım faaliyetleri yoğunlaştırılacaktır.
+
+**4. Projeyle İlgili Kritik Ek Sorular**
+
+1.  Projenin LLM entegrasyonu bölümünde, alan-spesifik ön-eğitim için kullanılacak "kuruluşumuzun uzun yıllardır organizasyonlara sunduğu SGOM ve MDR hizmetleri kapsamında edindiği bilgi ve tehdit tespit deneyimleri neticesinde oluşturduğu, atak senaryoları, tehdit tespit kuralları kütüphanesi, korelasyon kuralları kütüphanesi gibi geniş ve zengin veri setleri"nin detayları nelerdir? Bu veri setlerinin boyutu, çeşitliliği ve gizliliği nasıl yönetilecektir?
+2.  Yapay zeka modellerinin gerçek zamanlı veri ile yeniden eğitimini gerçekleştirecek online öğrenme yöntemleri nasıl tasarlanacaktır? Modelin sürekli güncellenmesi sırasında sistem performansında yaşanabilecek olası düşüşler nasıl minimize edilecektir?
+3.  Projenin hedeflediği %60'lık tehdit analiz süresindeki kısalma oranı, mevcut manuel süreçlere kıyasla hangi somut adımların otomasyonu ile elde edilecektir? Bu otomasyonun insan analistlerin karar alma süreçleri üzerindeki etkisi ve denetim mekanizmaları nasıl kurgulanacaktır?
+4.  SIEM ve SOAR platformlarına entegrasyonun sağlanacağı belirtilmiştir. Bu entegrasyonun farklı SIEM/SOAR ürün ve versiyonları ile uyumluluğu nasıl garanti edilecektir? Açık standartlar (örneğin STIX/TAXII) kullanılarak geniş bir uyumluluk yelpazesi hedeflenmekte midir?
+5.  Projede geliştirilecek çözümün, siber güvenlik alanında artan regülasyonlara (GDPR, KVKK gibi) ve etik kurallara (örneğin, yapay zeka tarafından alınan kararların açıklanabilirliği - XAI) uyumu nasıl sağlanacaktır?
+
+**5. Puan: 93/100**
+
+**Gerekçe:**
+
+Bu proje önerisi, siber güvenlik alanındaki kritik bir ihtiyaca, yüksek Ar-Ge içeriği ve yenilikçi yaklaşımlarla odaklanmaktadır. Özellikle yapay zeka (makine öğrenimi ve büyük dil modelleri) kullanımının tehdit tespit, analiz ve olay müdahale süreçlerine entegrasyonu, mevcut çözümlerin sınırlılıklarını aşma potansiyeli taşımaktadır. LLM tabanlı otomatik kural ve playbook üretimi gibi yenilikçi unsurlar, projenin teknolojik düzeyini ileriye taşımaktadır.
+
+Proje planı detaylı, mantıksal bir akışa sahip ve modern proje yönetim metodolojileriyle desteklenmektedir. Kuruluşun geniş Ar-Ge altyapısı, deneyimli ve yetkin proje ekibi, projenin başarıyla tamamlanması için gerekli kapasiteye sahip olduğunu göstermektedir.
+
+Ekonomik ve ulusal kazanımlar açısından proje, büyüyen global bir pazara hitap etmekte, somut ticarileşme hedefleri ve stratejileri sunmaktadır. Türkiye'nin siber güvenlik kapasitesini artırma, teknoloji ihracatı ve kritik altyapıların korunması gibi ulusal hedeflerle güçlü bir uyum içerisindedir. Geçmiş projelerindeki ticari başarılar da, bu projenin çıktılarını ticarileştirme yeteneğine işaret etmektedir.
+
+Öngörülen riskler iyi tanımlanmış ve bunlara karşı alınacak önlemler detaylı bir şekilde açıklanmıştır.
+Bu güçlü yönler ve projenin genel potansiyeli göz önüne alındığında, yüksek bir puanı hak etmektedir.
+
+**Ek Puan Değerlendirmesi:**
+*   **Öncelikli Alan Desteği (Bilgisayar Bilimleri > Bilgi Güvenliği Ve Güvenilirliği):** 5 puan
+*   **Geçmiş Tübitak Projelerinin Ticarileşme Performansı:** Kuruluşun önceki projelerinden (S2GATES, BATIC, ICSPOT, Veri Keşif) elde ettiği önemli satış ve lisans gelirleri dikkate alınarak 8 puan.
+
+**Toplam Ek Puan:** 13 puan
+**Toplam Puan:** 80 (Temel Değerlendirme) + 13 (Ek Puan) = 93/100
+
+**6. Sonuç**
+
+Önerilen proje, siber güvenlik alanında önemli bir boşluğu doldurmaya aday, yüksek potansiyelli ve yenilikçi bir Ar-Ge girişimidir. Geliştirilecek yapay zeka tabanlı çözüm, hem ulusal hem de uluslararası düzeyde siber dayanıklılığa ve ekonomik büyümeye önemli katkılar sağlayacaktır. Planlama, ekip ve altyapı açısından güçlü bir temele sahip olan proje, belirlenen riskleri etkin önlemlerle yönetmeyi hedeflemektedir.

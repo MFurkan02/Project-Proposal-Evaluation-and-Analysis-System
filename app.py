@@ -5,7 +5,6 @@ from flask import Flask, render_template, request, jsonify, send_from_directory
 from dotenv import load_dotenv
 from google import genai
 from fpdf import FPDF
-import json
 from datetime import datetime
 
 # --- YAPILANDIRMA ---
@@ -15,8 +14,13 @@ app = Flask(__name__)
 UPLOAD_FOLDER = "uploads"
 RAG_FOLDER = "RAG files"
 FONT_FOLDER = "fonts"
-FONT_NORMAL = os.path.join(FONT_FOLDER, "TIMES.ttf")
-FONT_BOLD = os.path.join(FONT_FOLDER, "TIMESBD.ttf")
+
+#FONT_NORMAL = os.path.join(FONT_FOLDER, "TIMES.ttf")
+#FONT_BOLD = os.path.join(FONT_FOLDER, "TIMESBD.ttf")
+
+FONT_REGULAR = os.path.join(FONT_FOLDER, "DejaVuSans.ttf")
+FONT_BOLD = os.path.join(FONT_FOLDER, "DejaVuSans-Bold.ttf")
+
 HISTORY_FILE = "history.json"
 LOG_FOLDER = "logs"
 
@@ -111,14 +115,17 @@ def clean_report_header(text):
 
 
 
-"""def remove_lonely_numbered_lines(text):
+"""
+def remove_lonely_numbered_lines(text):
     cleaned_lines = []
     for line in text.split('\n'):
         # Matches lines that contain ONLY markdown + a number + dot
         if re.match(r'^\s*(\*\*)?\s*\d+\.\s*(\*\*)?\s*$', line):
             continue
         cleaned_lines.append(line)
-    return '\n'.join(cleaned_lines)"""
+    return '\n'.join(cleaned_lines)
+
+"""
 
 import re
 
@@ -140,15 +147,8 @@ def remove_sensitive_project_info(text):
     sensitive_patterns = [
         r'proje\s*(adı|ismi|başlığı)',
         r'proje\s*(no|numara|numarası)',
-        r'yürütücü',
-        #r'kuruluş',
-        r'başvuru\s*sahibi',
-        r'destek\s*programı',
-        r'proje\s*sahibi',
         r'gizli\s*bilgi',
-        r'\[?\s*gizli\s*\]?',
-        #r'^\s*#+\s*puan\s*(ve|&|-)?\s*gerekçes(i|leri)?\b',
-        #r'^\s*\d+\s*[.)]?\s*#+?\s*puan(\s*(ve|&|-)?\s*gerekçes(i|leri)?)?\b',   
+        r'\[?\s*gizli\s*\]?',  
     ]
 
     cleaned_lines = []
@@ -164,11 +164,11 @@ def remove_sensitive_project_info(text):
 
 # PDF Sınıfı
 class PDFReport(FPDF):
-    FONT_NAME = "Custom-Font" 
+    FONT_NAME = "DejaVu" 
     def __init__(self):
         super().__init__()
-        if os.path.exists(FONT_NORMAL):
-            self.add_font(self.FONT_NAME, "", FONT_NORMAL, uni=True)
+        if os.path.exists(FONT_REGULAR):
+            self.add_font(self.FONT_NAME, "", FONT_REGULAR, uni=True)
         if os.path.exists(FONT_BOLD):
             self.add_font(self.FONT_NAME, "B", FONT_BOLD, uni=True)
 
