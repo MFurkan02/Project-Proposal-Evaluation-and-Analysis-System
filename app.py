@@ -15,8 +15,6 @@ UPLOAD_FOLDER = "uploads"
 RAG_FOLDER = "RAG files"
 FONT_FOLDER = "fonts"
 
-#FONT_NORMAL = os.path.join(FONT_FOLDER, "TIMES.ttf")
-#FONT_BOLD = os.path.join(FONT_FOLDER, "TIMESBD.ttf")
 
 FONT_REGULAR = os.path.join(FONT_FOLDER, "DejaVuSans.ttf")
 FONT_BOLD = os.path.join(FONT_FOLDER, "DejaVuSans-Bold.ttf")
@@ -115,20 +113,6 @@ def clean_report_header(text):
 
 
 
-"""
-def remove_lonely_numbered_lines(text):
-    cleaned_lines = []
-    for line in text.split('\n'):
-        # Matches lines that contain ONLY markdown + a number + dot
-        if re.match(r'^\s*(\*\*)?\s*\d+\.\s*(\*\*)?\s*$', line):
-            continue
-        cleaned_lines.append(line)
-    return '\n'.join(cleaned_lines)
-
-"""
-
-import re
-
 def remove_lonely_numbered_lines(text):
     cleaned_lines = []
     for line in text.split('\n'):
@@ -148,7 +132,8 @@ def remove_sensitive_project_info(text):
         r'proje\s*(adı|ismi|başlığı)',
         r'proje\s*(no|numara|numarası)',
         r'gizli\s*bilgi',
-        r'\[?\s*gizli\s*\]?',  
+        r'\[?\s*gizli\s*\]?',
+        r'değerlendirme\s*tarihi',  
     ]
 
     cleaned_lines = []
@@ -162,7 +147,7 @@ def remove_sensitive_project_info(text):
 
 
 
-# PDF Sınıfı
+# PDF Class
 class PDFReport(FPDF):
     FONT_NAME = "DejaVu" 
     def __init__(self):
@@ -357,10 +342,6 @@ def analyze():
             if not safe_title:
                 safe_title = "proje_analiz_raporu"
 
-        # --- METİN BİRLEŞTİRME (Sıralı Enjeksiyon) ---
-        # 7. maddeyi (Puan) ayırıp araya Soru Setini sokuyoruz
-        #parts = re.split(r'(?i)(7\.\s*Puan:|Puan:|Skor:)', main_text, maxsplit=1)
-
         print(main_text)
 
         
@@ -428,11 +409,6 @@ def analyze():
 @app.route('/download/<filename>')
 def download(filename):
     return send_from_directory(UPLOAD_FOLDER, filename)
-
-
-"""if __name__ == '__main__':
-    app.run(debug=True, port=5000)"""
-
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))  # Use Render's port if available

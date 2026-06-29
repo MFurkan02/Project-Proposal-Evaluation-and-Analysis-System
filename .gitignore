@@ -27,3 +27,9 @@ uploads/
 # OS
 .DS_Store
 Thumbs.db
+
+#Fonts
+fonts/
+
+#RAG Files
+RAG files/
